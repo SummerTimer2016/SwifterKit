@@ -22,7 +22,7 @@ pod 'SwifterKit'
 
 ## Author
 
-jianglu, jianglu@99elink.com
+SummerTimer2016, SummerTimer2016@163.com
 
 ## License
 
