@@ -1,0 +1,16 @@
+PODS:
+  - SwifterKit (0.1.0)
+
+DEPENDENCIES:
+  - SwifterKit (from `../`)
+
+EXTERNAL SOURCES:
+  SwifterKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SwifterKit: f73dbfb7eec2a7642ab03744bdd0b1ce293b4c72
+
+PODFILE CHECKSUM: 3bf16dde03083b19c14a91d38ca5dd91483ab857
+
+COCOAPODS: 1.10.1

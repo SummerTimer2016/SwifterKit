@@ -1,42 +1,24 @@
-#
-# Be sure to run `pod lib lint SwifterKit.podspec' to ensure this is a
-# valid spec before submitting.
-#
-# Any lines starting with a # are optional, but their use is encouraged
-# To learn more about a Podspec see https://guides.cocoapods.org/syntax/podspec.html
-#
-
 Pod::Spec.new do |s|
-  s.name             = 'SwifterKit'
-  s.version          = '0.1.0'
-  s.summary          = 'A short description of SwifterKit.'
+  s.name = 'SwifterKit'
+  s.version = '5.3.0'
+  s.summary = 'A handy collection of more than 500 native Swift extensions to boost your productivity.'
+  s.description = <<-DESC
+  SwifterSwift is a collection of over 500 native Swift extensions, with handy methods, syntactic sugar, and performance improvements for wide range of primitive data types, UIKit and Cocoa classes –over 500 in 1– for iOS, macOS, tvOS and watchOS.
+                   DESC
 
-# This description is used to generate tags and improve search results.
-#   * Think: What does it do? Why did you write it? What is the focus?
-#   * Try to keep it short, snappy and to the point.
-#   * Write the description between the DESC delimiters below.
-#   * Finally, don't worry about the indent, CocoaPods strips it!
+  s.homepage = 'https://github.com/SummerTimer2016/SwifterKit'
+  s.license = { type: 'MIT', file: 'LICENSE' }
+  s.authors = { 'SummerShine' => 'SummerTimer2016@163.com' }
+  s.social_media_url = 'http://twitter.com/omaralbeik'
+#  s.screenshot = 'https://raw.githubusercontent.com/SwifterSwift/SwifterSwift/master/Assets/logo.png'
+#  s.documentation_url = 'http://swifterswift.com/docs'
 
-  s.description      = <<-DESC
-TODO: Add long description of the pod here.
-                       DESC
+  s.ios.deployment_target = '10.0'
 
-  s.homepage         = 'https://github.com/jianglu/SwifterKit'
-  # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
-  s.license          = { :type => 'MIT', :file => 'LICENSE' }
-  s.author           = { 'jianglu' => 'jianglu@99elink.com' }
-  s.source           = { :git => 'https://github.com/jianglu/SwifterKit.git', :tag => s.version.to_s }
-  # s.social_media_url = 'https://twitter.com/<TWITTER_USERNAME>'
+  s.swift_version = '5.3'
+  s.requires_arc = true
+  s.source = { git: 'https://github.com/SummerTimer2016/SwifterKit.git', tag: s.version.to_s }
+  s.source_files = 'SwifterKit/Sources/**/*.swift'
 
-  s.ios.deployment_target = '9.0'
-
-  s.source_files = 'SwifterKit/Classes/**/*'
-  
-  # s.resource_bundles = {
-  #   'SwifterKit' => ['SwifterKit/Assets/*.png']
-  # }
-
-  # s.public_header_files = 'Pod/Classes/**/*.h'
-  # s.frameworks = 'UIKit', 'MapKit'
-  # s.dependency 'AFNetworking', '~> 2.3'
 end
+
