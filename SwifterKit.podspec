@@ -18,7 +18,7 @@ Pod::Spec.new do |s|
   s.swift_version = '5.3'
   s.requires_arc = true
   s.source = { git: 'https://github.com/SummerTimer2016/SwifterKit.git', tag: s.version.to_s }
-  s.source_files = 'SwifterKit/Sources/**/*.swift'
+  s.source_files = 'SwifterKit/Classes/Sources/**/*.swift'
 
 end
 
