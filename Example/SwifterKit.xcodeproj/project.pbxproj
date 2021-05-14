@@ -50,7 +50,7 @@
 		C48DDF24264E298200575E33 /* UICollectionView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UICollectionView+Extensions.swift"; sourceTree = "<group>"; };
 		C48DDF25264E298200575E33 /* UITextField+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extensions.swift"; sourceTree = "<group>"; };
 		C48DDF27264E298200575E33 /* SFDataStructures.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFDataStructures.swift; sourceTree = "<group>"; };
-		C48DDF28264E298200575E33 /* SFLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFLog.swift; sourceTree = "<group>"; };
+		C48DDF28264E298200575E33 /* SFDebuLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFDebuLog.swift; sourceTree = "<group>"; };
 		C48DDF29264E298200575E33 /* SFKit.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFKit.swift; sourceTree = "<group>"; };
 		C48DDF2A264E298200575E33 /* SFBiometrics.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFBiometrics.swift; sourceTree = "<group>"; };
 		C48DDF2B264E298200575E33 /* SFPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFPassword.swift; sourceTree = "<group>"; };
@@ -241,7 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				C48DDF27264E298200575E33 /* SFDataStructures.swift */,
-				C48DDF28264E298200575E33 /* SFLog.swift */,
+				C48DDF28264E298200575E33 /* SFDebuLog.swift */,
 				C48DDF29264E298200575E33 /* SFKit.swift */,
 				C48DDF2A264E298200575E33 /* SFBiometrics.swift */,
 				C48DDF2B264E298200575E33 /* SFPassword.swift */,

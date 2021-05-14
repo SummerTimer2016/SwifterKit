@@ -29,7 +29,7 @@ import Foundation
 // MARK: - Global functions
 
 /// The private BFLogClass created to manage the log strings.
-public enum SFLog {
+public enum SFDebuLog {
     // MARK: - Variables
     
     /// Activate or not BFLog.
