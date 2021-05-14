@@ -1,9 +1,9 @@
 Pod::Spec.new do |s|
   s.name = 'SwifterKit'
-  s.version = '5.3.0'
-  s.summary = 'A handy collection of more than 500 native Swift extensions to boost your productivity.'
+  s.version = '0.0.1'
+  s.summary = 'SwifterKit is a collection SwifterSwift And BFKit'
   s.description = <<-DESC
-  SwifterSwift is a collection of over 500 native Swift extensions, with handy methods, syntactic sugar, and performance improvements for wide range of primitive data types, UIKit and Cocoa classes –over 500 in 1– for iOS, macOS, tvOS and watchOS.
+  SwifterKit is a collection SwifterSwift And BFKit, with handy methods, syntactic sugar, and performance improvements for wide range of primitive data types, UIKit and Cocoa classes –over 500 in 1– for iOS, macOS, tvOS and watchOS.
                    DESC
 
   s.homepage = 'https://github.com/SummerTimer2016/SwifterKit'
