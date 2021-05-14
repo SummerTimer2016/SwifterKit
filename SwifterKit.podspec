@@ -1,5 +1,5 @@
 Pod::Spec.new do |s|
-  s.name = 'SwifterKit'
+  s.name = 'SwifterSFKit'
   s.version = '1.0.1'
   s.summary = 'SwifterKit is a collection SwifterSwift And BFKit'
   s.description = <<-DESC
