@@ -187,6 +187,20 @@ public extension UIView {
         }
         layer.masksToBounds = false
     }
+    /// Create a shadow on the UIView.
+    ///
+    /// - Parameters:
+    ///   - offset: Shadow offset.
+    ///   - opacity: Shadow opacity.
+    ///   - radius: Shadow radius.
+    ///   - color: Shadow color. Default is black.
+    func shadowSystem(offset: CGSize, opacity: Float, radius: CGFloat, cornerRadius: CGFloat = 0, color: UIColor = UIColor.black) {
+        layer.shadowColor = color.cgColor
+        layer.shadowOpacity = opacity
+        layer.shadowOffset = offset
+        layer.shadowRadius = radius
+        layer.masksToBounds = false
+    }
     
     /// Removes shadow around the UIView.
     func removeShadow(maskToBounds: Bool = true) {
