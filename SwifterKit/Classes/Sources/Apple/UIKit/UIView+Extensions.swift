@@ -199,6 +199,7 @@ public extension UIView {
         layer.shadowOpacity = opacity
         layer.shadowOffset = offset
         layer.shadowRadius = radius
+        layer.cornerRadius = cornerRadius
         layer.masksToBounds = false
     }
     
