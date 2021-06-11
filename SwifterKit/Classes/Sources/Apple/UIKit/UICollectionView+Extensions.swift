@@ -10,11 +10,16 @@ public extension UICollectionView {
     var indexPathForLastItem: IndexPath? {
         return indexPathForLastItem(inSection: lastSection)
     }
-
+    
     /// SwifterSwift: Index of last section in collectionView.
     var lastSection: Int {
         return numberOfSections > 0 ? numberOfSections - 1 : 0
     }
+    /// VisibleCells in the order they are displayed on screen.
+    var orderedVisibleCells: [UICollectionViewCell] {
+        return indexPathsForVisibleItems.sorted().compactMap { cellForItem(at: $0) }
+    }
+    
 }
 
 // MARK: - Methods
@@ -32,7 +37,7 @@ public extension UICollectionView {
         }
         return itemsCount
     }
-
+    
     /// SwifterSwift: IndexPath for last item in section.
     ///
     /// - Parameter section: section to get last item in.
@@ -49,7 +54,7 @@ public extension UICollectionView {
         }
         return IndexPath(item: numberOfItems(inSection: section) - 1, section: section)
     }
-
+    
     /// SwifterSwift: Reload data with a completion handler.
     ///
     /// - Parameter completion: completion handler to run after reloadData finishes.
@@ -60,7 +65,7 @@ public extension UICollectionView {
             completion()
         })
     }
-
+    
     /// SwifterSwift: Dequeue reusable UICollectionViewCell using class name.
     ///
     /// - Parameters:
@@ -74,7 +79,7 @@ public extension UICollectionView {
         }
         return cell
     }
-
+    
     /// SwifterSwift: Dequeue reusable UICollectionReusableView using class name.
     ///
     /// - Parameters:
@@ -85,15 +90,15 @@ public extension UICollectionView {
     func dequeueReusableSupplementaryView<T: UICollectionReusableView>(ofKind kind: String, withClass name: T.Type,
                                                                        for indexPath: IndexPath) -> T {
         guard let cell = dequeueReusableSupplementaryView(
-            ofKind: kind,
-            withReuseIdentifier: String(describing: name),
-            for: indexPath) as? T else {
+                ofKind: kind,
+                withReuseIdentifier: String(describing: name),
+                for: indexPath) as? T else {
             fatalError(
                 "Couldn't find UICollectionReusableView for \(String(describing: name)), make sure the view is registered with collection view")
         }
         return cell
     }
-
+    
     /// SwifterSwift: Register UICollectionReusableView using class name.
     ///
     /// - Parameters:
@@ -102,7 +107,7 @@ public extension UICollectionView {
     func register<T: UICollectionReusableView>(supplementaryViewOfKind kind: String, withClass name: T.Type) {
         register(T.self, forSupplementaryViewOfKind: kind, withReuseIdentifier: String(describing: name))
     }
-
+    
     /// SwifterSwift: Register UICollectionViewCell using class name.
     ///
     /// - Parameters:
@@ -111,14 +116,14 @@ public extension UICollectionView {
     func register<T: UICollectionViewCell>(nib: UINib?, forCellWithClass name: T.Type) {
         register(nib, forCellWithReuseIdentifier: String(describing: name))
     }
-
+    
     /// SwifterSwift: Register UICollectionViewCell using class name.
     ///
     /// - Parameter name: UICollectionViewCell type.
     func register<T: UICollectionViewCell>(cellWithClass name: T.Type) {
         register(T.self, forCellWithReuseIdentifier: String(describing: name))
     }
-
+    
     /// SwifterSwift: Register UICollectionReusableView using class name.
     ///
     /// - Parameters:
@@ -129,7 +134,7 @@ public extension UICollectionView {
                                                withClass name: T.Type) {
         register(nib, forSupplementaryViewOfKind: kind, withReuseIdentifier: String(describing: name))
     }
-
+    
     /// SwifterSwift: Register UICollectionViewCell with .xib file using only its corresponding class.
     ///               Assumes that the .xib filename and cell class has the same name.
     ///
@@ -139,14 +144,14 @@ public extension UICollectionView {
     func register<T: UICollectionViewCell>(nibWithCellClass name: T.Type, at bundleClass: AnyClass? = nil) {
         let identifier = String(describing: name)
         var bundle: Bundle?
-
+        
         if let bundleName = bundleClass {
             bundle = Bundle(for: bundleName)
         }
-
+        
         register(UINib(nibName: identifier, bundle: bundle), forCellWithReuseIdentifier: identifier)
     }
-
+    
     /// SwifterSwift: Safely scroll to possibly invalid IndexPath.
     ///
     /// - Parameters:
@@ -155,14 +160,14 @@ public extension UICollectionView {
     ///   - animated: Whether to animate or not.
     func safeScrollToItem(at indexPath: IndexPath, at scrollPosition: UICollectionView.ScrollPosition, animated: Bool) {
         guard indexPath.item >= 0,
-            indexPath.section >= 0,
-            indexPath.section < numberOfSections,
-            indexPath.item < numberOfItems(inSection: indexPath.section) else {
+              indexPath.section >= 0,
+              indexPath.section < numberOfSections,
+              indexPath.item < numberOfItems(inSection: indexPath.section) else {
             return
         }
         scrollToItem(at: indexPath, at: scrollPosition, animated: animated)
     }
-
+    
     /// SwifterSwift: Check whether IndexPath is valid within the CollectionView.
     ///
     /// - Parameter indexPath: An IndexPath to check.
@@ -172,6 +177,13 @@ public extension UICollectionView {
             indexPath.item >= 0 &&
             indexPath.section < numberOfSections &&
             indexPath.item < numberOfItems(inSection: indexPath.section)
+    }
+    /// Gets the currently visibleCells of a section.
+    ///
+    /// - Parameter section: The section to filter the cells.
+    /// - Returns: Array of visible UICollectionViewCells in the argument section.
+    func visibleCells(in section: Int) -> [UICollectionViewCell] {
+        return visibleCells.filter { indexPath(for: $0)?.section == section }
     }
 }
 

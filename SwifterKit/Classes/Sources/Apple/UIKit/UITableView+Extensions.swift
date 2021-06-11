@@ -36,7 +36,7 @@ public extension UITableView {
         guard let lastSection = lastSection else { return nil }
         return indexPathForLastRow(inSection: lastSection)
     }
-
+    
     /// SwifterSwift: Index of last section in tableView.
     var lastSection: Int? {
         return numberOfSections > 0 ? numberOfSections - 1 : nil
@@ -58,7 +58,7 @@ public extension UITableView {
         }
         return rowCount
     }
-
+    
     /// SwifterSwift: IndexPath for last row in section.
     ///
     /// - Parameter section: section to get last row in.
@@ -70,7 +70,7 @@ public extension UITableView {
         }
         return IndexPath(row: numberOfRows(inSection: section) - 1, section: section)
     }
-
+    
     /// SwifterSwift: Reload data with a completion handler.
     ///
     /// - Parameter completion: completion handler to run after reloadData finishes.
@@ -81,17 +81,17 @@ public extension UITableView {
             completion()
         })
     }
-
+    
     /// SwifterSwift: Remove TableFooterView.
     func removeTableFooterView() {
         tableFooterView = nil
     }
-
+    
     /// SwifterSwift: Remove TableHeaderView.
     func removeTableHeaderView() {
         tableHeaderView = nil
     }
-
+    
     /// SwifterSwift: Dequeue reusable UITableViewCell using class name.
     ///
     /// - Parameter name: UITableViewCell type.
@@ -103,7 +103,7 @@ public extension UITableView {
         }
         return cell
     }
-
+    
     /// SwifterSwift: Dequeue reusable UITableViewCell using class name for indexPath.
     ///
     /// - Parameters:
@@ -117,7 +117,7 @@ public extension UITableView {
         }
         return cell
     }
-
+    
     /// SwifterSwift: Dequeue reusable UITableViewHeaderFooterView using class name.
     ///
     /// - Parameter name: UITableViewHeaderFooterView type.
@@ -129,7 +129,7 @@ public extension UITableView {
         }
         return headerFooterView
     }
-
+    
     /// SwifterSwift: Register UITableViewHeaderFooterView using class name.
     ///
     /// - Parameters:
@@ -138,21 +138,21 @@ public extension UITableView {
     func register<T: UITableViewHeaderFooterView>(nib: UINib?, withHeaderFooterViewClass name: T.Type) {
         register(nib, forHeaderFooterViewReuseIdentifier: String(describing: name))
     }
-
+    
     /// SwifterSwift: Register UITableViewHeaderFooterView using class name.
     ///
     /// - Parameter name: UITableViewHeaderFooterView type.
     func register<T: UITableViewHeaderFooterView>(headerFooterViewClassWith name: T.Type) {
         register(T.self, forHeaderFooterViewReuseIdentifier: String(describing: name))
     }
-
+    
     /// SwifterSwift: Register UITableViewCell using class name.
     ///
     /// - Parameter name: UITableViewCell type.
     func register<T: UITableViewCell>(cellWithClass name: T.Type) {
         register(T.self, forCellReuseIdentifier: String(describing: name))
     }
-
+    
     /// SwifterSwift: Register UITableViewCell using class name.
     ///
     /// - Parameters:
@@ -161,7 +161,7 @@ public extension UITableView {
     func register<T: UITableViewCell>(nib: UINib?, withCellClass name: T.Type) {
         register(nib, forCellReuseIdentifier: String(describing: name))
     }
-
+    
     /// SwifterSwift: Register UITableViewCell with .xib file using only its corresponding class.
     ///               Assumes that the .xib filename and cell class has the same name.
     ///
@@ -171,14 +171,14 @@ public extension UITableView {
     func register<T: UITableViewCell>(nibWithCellClass name: T.Type, at bundleClass: AnyClass? = nil) {
         let identifier = String(describing: name)
         var bundle: Bundle?
-
+        
         if let bundleName = bundleClass {
             bundle = Bundle(for: bundleName)
         }
-
+        
         register(UINib(nibName: identifier, bundle: bundle), forCellReuseIdentifier: identifier)
     }
-
+    
     /// SwifterSwift: Check whether IndexPath is valid within the tableView.
     ///
     /// - Parameter indexPath: An IndexPath to check.
@@ -189,7 +189,7 @@ public extension UITableView {
             indexPath.section < numberOfSections &&
             indexPath.row < numberOfRows(inSection: indexPath.section)
     }
-
+    
     /// SwifterSwift: Safely scroll to possibly invalid IndexPath.
     ///
     /// - Parameters:
@@ -200,6 +200,13 @@ public extension UITableView {
         guard indexPath.section < numberOfSections else { return }
         guard indexPath.row < numberOfRows(inSection: indexPath.section) else { return }
         scrollToRow(at: indexPath, at: scrollPosition, animated: animated)
+    }
+    /// Gets the currently visibleCells of a section.
+    ///
+    /// - Parameter section: The section to filter the cells.
+    /// - Returns: Array of visible UITableViewCell in the argument section.
+    func visibleCells(in section: Int) -> [UITableViewCell] {
+        return visibleCells.filter { indexPath(for: $0)?.section == section }
     }
 }
 

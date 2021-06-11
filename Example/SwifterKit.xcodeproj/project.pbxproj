@@ -8,6 +8,9 @@
 
 /* Begin PBXBuildFile section */
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		C41C507D2673069100FE8FFE /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41C507B2673069000FE8FFE /* SkyFloatingLabelTextFieldWithIcon.swift */; };
+		C41C507E2673069100FE8FFE /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41C507C2673069100FE8FFE /* SkyFloatingLabelTextField.swift */; };
+		C41C50802673069800FE8FFE /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41C507F2673069800FE8FFE /* UITextField+fixCaretPosition.swift */; };
 		ED1E05B5E254C33F26471990 /* Pods_SwifterKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002A76A65589D6C02143B6CA /* Pods_SwifterKit_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -21,6 +24,10 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6FD032F8C94B5C909952BF2E /* Pods-SwifterKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwifterKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-SwifterKit_Tests/Pods-SwifterKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
+		C41C50792673066B00FE8FFE /* Device+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+Extensions.swift"; sourceTree = "<group>"; };
+		C41C507B2673069000FE8FFE /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
+		C41C507C2673069100FE8FFE /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
+		C41C507F2673069800FE8FFE /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		C48DDF05264E298200575E33 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		C48DDF09264E298200575E33 /* WKWebView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Extensions.swift"; sourceTree = "<group>"; };
 		C48DDF0B264E298200575E33 /* CGPoint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CGPoint.swift; sourceTree = "<group>"; };
@@ -77,7 +84,6 @@
 		C48DDF42264E298300575E33 /* CLVisit+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLVisit+Extensions.swift"; sourceTree = "<group>"; };
 		C48DDF43264E298300575E33 /* CLLocation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extensions.swift"; sourceTree = "<group>"; };
 		C48DDF44264E298300575E33 /* CLLocationArray+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationArray+Extensions.swift"; sourceTree = "<group>"; };
-		C48DDF47264E298300575E33 /* BFLog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BFLog.swift; sourceTree = "<group>"; };
 		C48DDF49264E298300575E33 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -148,6 +154,16 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
+		C41C507A2673068300FE8FFE /* SkyFloating */ = {
+			isa = PBXGroup;
+			children = (
+				C41C507F2673069800FE8FFE /* UITextField+fixCaretPosition.swift */,
+				C41C507C2673069100FE8FFE /* SkyFloatingLabelTextField.swift */,
+				C41C507B2673069000FE8FFE /* SkyFloatingLabelTextFieldWithIcon.swift */,
+			);
+			path = SkyFloating;
+			sourceTree = "<group>";
+		};
 		C48DDF03264E298200575E33 /* SwifterKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -171,7 +187,6 @@
 			isa = PBXGroup;
 			children = (
 				C48DDF07264E298200575E33 /* Apple */,
-				C48DDF45264E298300575E33 /* Linux */,
 			);
 			path = Sources;
 			sourceTree = "<group>";
@@ -179,6 +194,7 @@
 		C48DDF07264E298200575E33 /* Apple */ = {
 			isa = PBXGroup;
 			children = (
+				C41C507A2673068300FE8FFE /* SkyFloating */,
 				C48DDF08264E298200575E33 /* WebKit */,
 				C48DDF0A264E298200575E33 /* CoreGraphics */,
 				C48DDF0C264E298200575E33 /* UIKit */,
@@ -256,6 +272,7 @@
 		C48DDF30264E298200575E33 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
+				C41C50792673066B00FE8FFE /* Device+Extensions.swift */,
 				C48DDF31264E298200575E33 /* Array+Extensions.swift */,
 				C48DDF32264E298200575E33 /* NSPointerArray+Extensions.swift */,
 				C48DDF33264E298200575E33 /* DispatchQueue+Extensions.swift */,
@@ -284,22 +301,6 @@
 				C48DDF44264E298300575E33 /* CLLocationArray+Extensions.swift */,
 			);
 			path = CoreLocation;
-			sourceTree = "<group>";
-		};
-		C48DDF45264E298300575E33 /* Linux */ = {
-			isa = PBXGroup;
-			children = (
-				C48DDF46264E298300575E33 /* SwifterKit */,
-			);
-			path = Linux;
-			sourceTree = "<group>";
-		};
-		C48DDF46264E298300575E33 /* SwifterKit */ = {
-			isa = PBXGroup;
-			children = (
-				C48DDF47264E298300575E33 /* BFLog.swift */,
-			);
-			path = SwifterKit;
 			sourceTree = "<group>";
 		};
 		C48DDF48264E298300575E33 /* Assets */ = {
@@ -435,7 +436,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C41C507E2673069100FE8FFE /* SkyFloatingLabelTextField.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
+				C41C50802673069800FE8FFE /* UITextField+fixCaretPosition.swift in Sources */,
+				C41C507D2673069100FE8FFE /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
