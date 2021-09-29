@@ -66,8 +66,6 @@
 		C48DDF2B264E298200575E33 /* SFPassword.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFPassword.swift; sourceTree = "<group>"; };
 		C48DDF2C264E298200575E33 /* SFSystemSound.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSystemSound.swift; sourceTree = "<group>"; };
 		C48DDF2D264E298200575E33 /* SFApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFApp.swift; sourceTree = "<group>"; };
-		C48DDF2E264E298200575E33 /* SFButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFButton.swift; sourceTree = "<group>"; };
-		C48DDF2F264E298200575E33 /* SFTextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFTextField.swift; sourceTree = "<group>"; };
 		C48DDF31264E298200575E33 /* Array+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Array+Extensions.swift"; sourceTree = "<group>"; };
 		C48DDF32264E298200575E33 /* NSPointerArray+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSPointerArray+Extensions.swift"; sourceTree = "<group>"; };
 		C48DDF33264E298200575E33 /* DispatchQueue+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "DispatchQueue+Extensions.swift"; sourceTree = "<group>"; };
@@ -274,8 +272,6 @@
 				C48DDF2B264E298200575E33 /* SFPassword.swift */,
 				C48DDF2C264E298200575E33 /* SFSystemSound.swift */,
 				C48DDF2D264E298200575E33 /* SFApp.swift */,
-				C48DDF2E264E298200575E33 /* SFButton.swift */,
-				C48DDF2F264E298200575E33 /* SFTextField.swift */,
 			);
 			path = SwifterKit;
 			sourceTree = "<group>";
