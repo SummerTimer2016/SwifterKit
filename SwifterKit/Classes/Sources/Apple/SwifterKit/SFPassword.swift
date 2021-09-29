@@ -29,7 +29,7 @@ import Foundation
 // MARK: - BFPassword struct
 
 /// This struct adds some useful functions to manage passwords.
-public enum SFPassword {
+ enum SFPassword {
     // MARK: - Variables
     
     /// Password strength level enum, from 0 (min) to 6 (max).
@@ -41,7 +41,7 @@ public enum SFPassword {
     /// - veryStrong: Password strength very strong.
     /// - secure:     Password strength secure.
     /// - verySecure: Password strength very secure.
-    public enum PasswordStrengthLevel: Int {
+     enum PasswordStrengthLevel: Int {
         case veryWeak
         case weak
         case average
@@ -57,7 +57,7 @@ public enum SFPassword {
     ///
     /// - Rarameter password: Password string.
     /// - Returns: Returns the password strength level with value from enum PasswordStrengthLevel.
-    public static func strength(password: String) -> PasswordStrengthLevel {
+     static func strength(password: String) -> PasswordStrengthLevel {
         switch lengthScore(password) + numbersScore(password) + symbolsScore(password) + lowercasedCharactersScore(password) + uppercasedCharactersScore(password) {
         case 1...49:
             return .veryWeak

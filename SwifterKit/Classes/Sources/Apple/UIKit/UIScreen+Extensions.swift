@@ -30,7 +30,7 @@ import UIKit
 // MARK: - UIScreen extension
 
 /// This extesion adds some useful functions to UIScreen.
-public extension UIScreen {
+ extension UIScreen {
     // MARK: - Variables
     
     /// Get the screen width.

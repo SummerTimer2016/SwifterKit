@@ -30,7 +30,7 @@ import UIKit
 // MARK: - UIToolbar extension
 
 /// This extesion adds some useful functions to UIToolbar.
-public extension UIToolbar {
+ extension UIToolbar {
     // MARK: - Functions
     
     /// Set the UIToolbar transparent or not.

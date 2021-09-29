@@ -5,7 +5,7 @@ import CoreGraphics
 
 // MARK: - Methods
 
-public extension CGSize {
+ extension CGSize {
     /// SwifterSwift: Returns the aspect ratio.
     var aspectRatio: CGFloat {
         guard height != 0 else { return 0 }
@@ -25,7 +25,7 @@ public extension CGSize {
 
 // MARK: - Methods
 
-public extension CGSize {
+ extension CGSize {
     /// SwifterSwift: Aspect fit CGSize.
     ///
     ///     let rect = CGSize(width: 120, height: 80)
@@ -59,7 +59,7 @@ public extension CGSize {
 
 // MARK: - Operators
 
-public extension CGSize {
+ extension CGSize {
     /// SwifterSwift: Add two CGSize.
     ///
     ///     let sizeA = CGSize(width: 5, height: 10)

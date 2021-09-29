@@ -16,7 +16,7 @@ import UIKit
     - font: Set your icon by setting the font of iconLabel
     - image: Set your icon by setting the image of iconImageView
  */
-public enum IconType: Int {
+ enum IconType: Int {
     case font
     case image
 }
@@ -157,7 +157,7 @@ open class SkyFloatingLabelTextFieldWithIcon: SkyFloatingLabelTextField {
      Initializes the control
      - parameter type the type of icon
      */
-    convenience public init(frame: CGRect, iconType: IconType) {
+    convenience  init(frame: CGRect, iconType: IconType) {
         self.init(frame: frame)
         self.iconType = iconType
         updateIconViewHiddenState()
@@ -167,7 +167,7 @@ open class SkyFloatingLabelTextFieldWithIcon: SkyFloatingLabelTextField {
     Initializes the control
     - parameter frame the frame of the control
     */
-    override public init(frame: CGRect) {
+    override  init(frame: CGRect) {
         super.init(frame: frame)
         createIcon()
         updateIconViewHiddenState()
@@ -177,7 +177,7 @@ open class SkyFloatingLabelTextFieldWithIcon: SkyFloatingLabelTextField {
      Intialzies the control by deserializing it
      - parameter aDecoder the object to deserialize the control from
      */
-    required public init?(coder aDecoder: NSCoder) {
+    required  init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         createIcon()
         updateIconViewHiddenState()

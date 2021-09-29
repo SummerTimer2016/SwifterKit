@@ -29,7 +29,7 @@ import Foundation
 // MARK: - Dictionary extension
 
 /// This extension adds some useful functions to Dictionary.
-public extension Dictionary {
+ extension Dictionary {
     // MARK: - Functions
     
     /// Append a Value for a given Key in the Dictionary.
@@ -113,7 +113,7 @@ public extension Dictionary {
 
 // MARK: - Operators
 
-public extension Dictionary {
+ extension Dictionary {
     /// SwifterSwift: Merge the keys/values of two dictionaries.
     ///
     ///        let dict: [String: String] = ["key1": "value1"]

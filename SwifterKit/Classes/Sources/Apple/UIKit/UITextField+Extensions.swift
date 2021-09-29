@@ -31,7 +31,7 @@ import UIKit
 
 // MARK: - Enums
 
-public extension UITextField {
+ extension UITextField {
     /// SwifterSwift: UITextField text type.
     ///
     /// - emailAddress: UITextField is used to enter email addresses.
@@ -51,7 +51,7 @@ public extension UITextField {
 
 // MARK: - Properties
 
-public extension UITextField {
+ extension UITextField {
     /// SwifterSwift: Set textField for common text types.
     var textType: TextType {
         get {
@@ -138,7 +138,7 @@ public extension UITextField {
 
 // MARK: - Methods
 
-public extension UITextField {
+ extension UITextField {
     /// SwifterSwift: Clear text.
     func clear() {
         text = ""
@@ -203,7 +203,7 @@ public extension UITextField {
 // MARK: - UITextField extension
 
 /// This extesion adds some useful functions to UITextField.
-public extension UITextField {
+ extension UITextField {
     // MARK: - Functions
     
     /// Create an UITextField and set some parameters.

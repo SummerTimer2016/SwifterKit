@@ -38,12 +38,12 @@ private var sendEventExchanged: Bool = false
 // MARK: - Global variables
 
 /// Custom touch image.
-public var customTouchImage: UIImage?
+ var customTouchImage: UIImage?
 
 // MARK: - Global functions
 
 /// Show touch on screen.
-public func showTouchOnScreen() {
+ func showTouchOnScreen() {
     guard let window = (UIApplication.value(forKey: "sharedApplication") as? UIApplication)?.keyWindow else {
         return
     }
@@ -52,7 +52,7 @@ public func showTouchOnScreen() {
 }
 
 /// Hide touch on screen.
-public func hideTouchOnScreen() {
+ func hideTouchOnScreen() {
     guard let window = (UIApplication.value(forKey: "sharedApplication") as? UIApplication)?.keyWindow else {
         return
     }
@@ -63,7 +63,7 @@ public func hideTouchOnScreen() {
 // MARK: - UIWindow extension
 
 /// This extesion adds some useful functions to UIWindow.
-public extension UIWindow {
+ extension UIWindow {
     // MARK: - Functions
 
     /// Take a screenshot of current window and choose if save it or not.
@@ -217,6 +217,7 @@ public extension UIWindow {
                         }
                     )
                 }
+            case .regionExited,.regionMoved,.regionEntered:break
             @unknown default:
                 break
             }
@@ -240,7 +241,7 @@ public extension UIWindow {
 }
 // MARK: - Methods
 
-public extension UIWindow {
+ extension UIWindow {
     /// SwifterSwift: Switch current root view controller with a new view controller.
     ///
     /// - Parameters:

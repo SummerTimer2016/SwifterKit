@@ -28,7 +28,7 @@ import UIKit
 
 // MARK: - Properties
 
-public extension UIViewController {
+ extension UIViewController {
     /// SwifterSwift: Check if ViewController is onscreen and not hidden.
     var isVisible: Bool {
         // http://stackoverflow.com/questions/2777438/how-to-tell-if-uiviewcontrollers-view-is-visible
@@ -38,7 +38,7 @@ public extension UIViewController {
 
 // MARK: - Methods
 
-public extension UIViewController {
+ extension UIViewController {
     /// SwifterSwift: Instantiate UIViewController from storyboard.
     ///
     /// - Parameters:
@@ -172,7 +172,7 @@ public extension UIViewController {
 // MARK: - UIViewController extension
 
 /// This extesion adds some useful functions to UIViewController.
-public extension UIViewController {
+ extension UIViewController {
     /// Use this in viewWillAppear(_:)
     ///
     /// - Parameter tableView: UITableView to be delected.

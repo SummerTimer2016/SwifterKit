@@ -29,7 +29,7 @@ import Foundation
 // MARK: - Collection extension
 
 /// This extension adds some useful functions to Collection protocol.
-public extension Collection {
+ extension Collection {
     // MARK: - Functions
     
     /// Convert self to JSON as String.

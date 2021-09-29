@@ -31,7 +31,7 @@ import WebKit
 // MARK: - WKWebView extension
 
 /// This exension adds some useful functions to WKWebView.
-public extension WKWebView {
+ extension WKWebView {
     // MARK: - Functions
     
     /// Load the requested website.
@@ -45,7 +45,7 @@ public extension WKWebView {
         load(URLRequest(url: url))
     }
     @discardableResult
-    public func loadURL(_ url: URL) -> WKNavigation? {
+     func loadURL(_ url: URL) -> WKNavigation? {
         return load(URLRequest(url: url))
     }
     
@@ -53,7 +53,7 @@ public extension WKWebView {
     /// - Parameter urlString: The string specifying the URL to navigate to.
     /// - Returns: A new navigation for given `urlString`.
     @discardableResult
-    public func loadURLString(_ urlString: String, timeout: TimeInterval? = nil) -> WKNavigation? {
+     func loadURLString(_ urlString: String, timeout: TimeInterval? = nil) -> WKNavigation? {
         guard let url = URL(string: urlString) else { return nil }
         var request = URLRequest(url: url)
         if let timeout = timeout {

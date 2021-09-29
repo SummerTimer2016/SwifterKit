@@ -16,7 +16,7 @@ import UIKit
  .default is the standard (on top) position; the error message is displayed in the `titleLabel`.
  .bottom displays the error below the text field in a dedicated `errorLabel`.
  */
-public enum ErrorMessagePlacement {
+ enum ErrorMessagePlacement {
     case `default`
     case bottom
 }
@@ -346,7 +346,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
     Initializes the control
     - parameter frame the frame of the control
     */
-    override public init(frame: CGRect) {
+    override  init(frame: CGRect) {
         super.init(frame: frame)
         init_SkyFloatingLabelTextField()
     }
@@ -355,7 +355,7 @@ open class SkyFloatingLabelTextField: UITextField { // swiftlint:disable:this ty
      Intialzies the control by deserializing it
      - parameter aDecoder the object to deserialize the control from
      */
-    required public init?(coder aDecoder: NSCoder) {
+    required  init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         init_SkyFloatingLabelTextField()
     }

@@ -31,7 +31,7 @@ import UIKit
 // MARK: - UIImageView extension
 
 /// This extesion adds some useful functions to UIImageView.
-public extension UIImageView {
+ extension UIImageView {
     // MARK: - Functions
     
     /// Create an UIImageView with the given image and frame

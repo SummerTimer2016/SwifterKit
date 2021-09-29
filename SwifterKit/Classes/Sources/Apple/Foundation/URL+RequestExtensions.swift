@@ -9,7 +9,7 @@ import FoundationNetworking
 
 // MARK: - Initializers
 
-public extension URLRequest {
+ extension URLRequest {
     /// SwifterSwift: Create URLRequest from URL string.
     ///
     /// - Parameter urlString: URL string to initialize URL request from

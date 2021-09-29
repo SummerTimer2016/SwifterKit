@@ -30,7 +30,7 @@ import UIKit
 // MARK: - UIButton extension
 // MARK: - Methods
 /// This extesion adds some useful functions to UIButton.
-public extension UIButton {
+ extension UIButton {
     // MARK: - Functions
     
     /// Create an UIButton in a frame with a title, a background image and highlighted background image.
@@ -116,7 +116,7 @@ public extension UIButton {
     }
 }
 // MARK: - Properties
-public extension UIButton {
+ extension UIButton {
     /// SwifterSwift: Image of disabled state for button; also inspectable from Storyboard.
     @IBInspectable
     var imageForDisabled: UIImage? {
@@ -250,7 +250,7 @@ public extension UIButton {
     }
 }
 // MARK: - Methods
-public extension UIButton {
+ extension UIButton {
     private var states: [UIControl.State] {
         return [.normal, .selected, .highlighted, .disabled]
     }

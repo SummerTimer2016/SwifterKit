@@ -32,21 +32,21 @@ import Foundation
 #endif
 
 /// BFKit version string.
-public let SFKitVersion = "1.0.0"
+ let SFKitVersion = "1.0.0"
 
 /// BFKit author string.
-public let SFKitAuthor = "Fabrizio Brancati And Summer"
+ let SFKitAuthor = "Fabrizio Brancati And Summer"
 
 #if canImport(UIKit)
     /// Font typealias.
-    public typealias Font = UIFont
+     typealias Font = UIFont
     /// Color typealias.
-    public typealias Color = UIColor
+     typealias Color = UIColor
 #elseif canImport(AppKit)
     /// Font typealias.
-    public typealias Font = NSFont
+     typealias Font = NSFont
     /// Color typealias.
-    public typealias Color = NSColor
+     typealias Color = NSColor
 #endif
 
 /// BFKit errors enum.
@@ -55,7 +55,7 @@ public let SFKitAuthor = "Fabrizio Brancati And Summer"
 /// - errorLoadingSound: Could not load sound error.
 /// - pathNotExist: Path not exist error.
 /// - pathNotAllowed: Path not allowed error.
-public enum SFKitError: Error {
+ enum SFKitError: Error {
     case jsonSerialization
     case errorLoadingSound
     case pathNotExist

@@ -2,7 +2,7 @@
 
 // MARK: - Properties
 
-public extension Bool {
+ extension Bool {
     /// SwifterSwift: Return 1 if true, or 0 if false.
     ///
     ///        false.int -> 0

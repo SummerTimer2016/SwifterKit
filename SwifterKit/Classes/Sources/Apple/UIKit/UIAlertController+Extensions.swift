@@ -9,7 +9,7 @@ import AudioToolbox
 
 // MARK: - Methods
 
-public extension UIAlertController {
+ extension UIAlertController {
     /// SwifterSwift: Present alert view controller in the current view controller.
     ///
     /// - Parameters:
@@ -75,7 +75,7 @@ public extension UIAlertController {
 
 // MARK: - Initializers
 
-public extension UIAlertController {
+ extension UIAlertController {
     /// SwifterSwift: Create new alert view controller with default OK action.
     ///
     /// - Parameters:

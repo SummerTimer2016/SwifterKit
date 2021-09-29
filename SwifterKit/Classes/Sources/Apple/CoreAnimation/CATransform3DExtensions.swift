@@ -20,7 +20,7 @@ extension CATransform3D: Equatable {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     @inlinable
-    public static func == (lhs: CATransform3D, rhs: CATransform3D) -> Bool {
+     static func == (lhs: CATransform3D, rhs: CATransform3D) -> Bool {
         CATransform3DEqualToTransform(lhs, rhs)
     }
 
@@ -29,7 +29,7 @@ extension CATransform3D: Equatable {
 
 // MARK: - Static Properties
 
-public extension CATransform3D {
+ extension CATransform3D {
     /// SwifterSwift: The identity transform: [1 0 0 0; 0 1 0 0; 0 0 1 0; 0 0 0 1].
     @inlinable
     static var identity: CATransform3D { CATransform3DIdentity }
@@ -45,7 +45,7 @@ extension CATransform3D: Codable {
     /// This initializer throws an error if reading from the decoder fails, or if the data read is corrupted or otherwise invalid.
     /// - Parameter decoder: The decoder to read data from.
     @inlinable
-    public init(from decoder: Decoder) throws {
+     init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
         self.init(m11: try container.decode(CGFloat.self),
                   m12: try container.decode(CGFloat.self),
@@ -72,7 +72,7 @@ extension CATransform3D: Codable {
     /// This function throws an error if any values are invalid for the given encoder’s format.
     /// - Parameter encoder: The encoder to write data to.
     @inlinable
-    public func encode(to encoder: Encoder) throws {
+     func encode(to encoder: Encoder) throws {
         var container = encoder.unkeyedContainer()
         try container.encode(m11)
         try container.encode(m12)
@@ -97,7 +97,7 @@ extension CATransform3D: Codable {
 
 // MARK: - Initializers
 
-public extension CATransform3D {
+ extension CATransform3D {
     /// SwifterSwift: Returns a transform that translates by `(tx, ty, tz)`.
     /// - Parameters:
     ///   - tx: x-axis translation
@@ -134,7 +134,7 @@ public extension CATransform3D {
 
 // MARK: - Properties
 
-public extension CATransform3D {
+ extension CATransform3D {
     /// SwifterSwift: Returns `true` if the receiver is the identity transform.
     @inlinable
     var isIdentity: Bool { CATransform3DIsIdentity(self) }
@@ -142,7 +142,7 @@ public extension CATransform3D {
 
 // MARK: - Methods
 
-public extension CATransform3D {
+ extension CATransform3D {
     /// SwifterSwift: Translate the receiver by `(tx, ty, tz)`.
     /// - Parameters:
     ///   - tx: x-axis translation
@@ -253,7 +253,7 @@ import CoreGraphics
 
 // MARK: - CGAffineTransform
 
-public extension CATransform3D {
+ extension CATransform3D {
     /// SwifterSwift: Returns true if the receiver can be represented exactly by an affine transform.
     @inlinable
     var isAffine: Bool { CATransform3DIsAffine(self) }

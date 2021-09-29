@@ -5,7 +5,7 @@ import UIKit
 
 // MARK: - Properties
 
-public extension UICollectionView {
+ extension UICollectionView {
     /// SwifterSwift: Index path of last item in collectionView.
     var indexPathForLastItem: IndexPath? {
         return indexPathForLastItem(inSection: lastSection)
@@ -24,7 +24,7 @@ public extension UICollectionView {
 
 // MARK: - Methods
 
-public extension UICollectionView {
+ extension UICollectionView {
     /// SwifterSwift: Number of all items in all sections of collectionView.
     ///
     /// - Returns: The count of all rows in the collectionView.

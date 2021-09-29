@@ -34,7 +34,7 @@ import Foundation
 // MARK: - NSAttributedString extension
 
 /// This extension adds some useful functions to NSAttributedString.
-public extension NSAttributedString {
+ extension NSAttributedString {
     /// UIFont or NSFont, default Helvetica(Neue) 12.
     ///
     /// - Parameters:
@@ -356,7 +356,7 @@ public extension NSAttributedString {
 }
 // MARK: - Operators
 
-public extension NSAttributedString {
+ extension NSAttributedString {
     /// SwifterSwift: Add a NSAttributedString to another NSAttributedString.
     ///
     /// - Parameters:

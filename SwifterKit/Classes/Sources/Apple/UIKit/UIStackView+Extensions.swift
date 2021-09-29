@@ -5,7 +5,7 @@ import UIKit
 
 // MARK: - Initializers
 
-public extension UIStackView {
+ extension UIStackView {
     /// SwifterSwift: Initialize an UIStackView with an array of UIView and common parameters.
     ///
     ///     let stackView = UIStackView(arrangedSubviews: [UIView(), UIView()], axis: .vertical)

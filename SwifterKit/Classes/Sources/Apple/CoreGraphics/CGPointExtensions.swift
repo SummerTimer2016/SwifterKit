@@ -5,7 +5,7 @@ import CoreGraphics
 
 // MARK: - Methods
 
-public extension CGPoint {
+ extension CGPoint {
     /// SwifterSwift: Distance from another CGPoint.
     ///
     ///     let point1 = CGPoint(x: 10, y: 10)
@@ -38,7 +38,7 @@ public extension CGPoint {
 
 // MARK: - Operators
 
-public extension CGPoint {
+ extension CGPoint {
     /// SwifterSwift: Add two CGPoints.
     ///
     ///     let point1 = CGPoint(x: 10, y: 10)

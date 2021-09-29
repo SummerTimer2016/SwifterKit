@@ -5,7 +5,7 @@ import CoreGraphics
 
 // MARK: - Properties
 
-public extension CGVector {
+ extension CGVector {
     /// SwifterSwift: The angle of rotation (in radians) of the vector. The range of the angle is -π to π; an angle of 0 points to the right.
     ///
     /// https://en.wikipedia.org/wiki/Atan2
@@ -23,7 +23,7 @@ public extension CGVector {
 
 // MARK: - Initializers
 
-public extension CGVector {
+ extension CGVector {
     /// SwifterSwift: Creates a vector with the given magnitude and angle.
     ///
     ///     let vector = CGVector(angle: .pi, magnitude: 1)
@@ -40,7 +40,7 @@ public extension CGVector {
 
 // MARK: - Operators
 
-public extension CGVector {
+ extension CGVector {
     /// SwifterSwift: Multiplies a scalar and a vector (commutative).
     ///
     ///     let vector = CGVector(dx: 1, dy: 1)

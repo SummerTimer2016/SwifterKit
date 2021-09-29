@@ -5,7 +5,7 @@ import UIKit
 
 // MARK: - Methods
 
-public extension UIStoryboard {
+ extension UIStoryboard {
     /// SwifterSwift: Get main storyboard for application.
     static var main: UIStoryboard? {
         let bundle = Bundle.main

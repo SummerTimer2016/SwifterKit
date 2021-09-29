@@ -5,7 +5,7 @@ import Foundation
 
 // MARK: - Methods
 
-public extension UserDefaults {
+ extension UserDefaults {
     /// SwifterSwift: get object from UserDefaults by using subscript.
     ///
     /// - Parameter key: key in the current user's defaults database.

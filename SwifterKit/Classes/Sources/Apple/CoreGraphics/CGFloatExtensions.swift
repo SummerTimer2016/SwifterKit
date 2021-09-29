@@ -9,7 +9,7 @@ import Foundation
 
 // MARK: - Properties
 
-public extension CGFloat {
+ extension CGFloat {
     /// SwifterSwift: Absolute of CGFloat value.
     var abs: CGFloat {
         return Swift.abs(self)

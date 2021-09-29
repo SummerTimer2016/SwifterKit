@@ -34,7 +34,7 @@ open class SFTextField: UITextField {
     // MARK: - Variables
     
     /// Max number of characters allowed by TextField.
-    @IBInspectable public var maxNumberOfCharacters: Int = 0
+    @IBInspectable  var maxNumberOfCharacters: Int = 0
     
     // MARK: - Functions
     
@@ -43,7 +43,7 @@ open class SFTextField: UITextField {
     /// - Parameter aDecoder: NSCoder.
     ///
     /// - Returns: The initialized instance.
-    public required init?(coder aDecoder: NSCoder) {
+     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         maxNumberOfCharacters = aDecoder.decodeInteger(forKey: "MaxNumberOfCharacters")
@@ -53,7 +53,7 @@ open class SFTextField: UITextField {
     /// Override init with frame.
     ///
     /// - Parameter frame: TextField frame.
-    override public init(frame: CGRect) {
+    override  init(frame: CGRect) {
         super.init(frame: frame)
         
         maxNumberOfCharacters = 0

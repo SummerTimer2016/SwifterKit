@@ -32,14 +32,14 @@ import Foundation
 ///
 /// - Parameter key: The key of the localized string.
 /// - Returns: Returns a localized string.
-public func NSLocalizedString(_ key: String) -> String {
+ func NSLocalizedString(_ key: String) -> String {
     NSLocalizedString(key, comment: "")
 }
 
 // MARK: - SFApp struct
 
 /// This class adds some useful functions for the App.
-public enum SFApp {
+ enum SFApp {
     // MARK: - Variables
     
     /// Used to store the BFHasBeenOpened in defaults.
@@ -47,14 +47,14 @@ public enum SFApp {
     
     /// Use this var to set you DEBUG or not builds.
     /// More info on how to use it [here](http://stackoverflow.com/questions/26890537/disabling-nslog-for-production-in-swift-project/26891797#26891797).
-    public static var isDebug = false
+     static var isDebug = false
     
     // MARK: - Functions
     
     /// Executes a block only if in DEBUG mode.
     ///
     /// - Parameter block: The block to be executed.
-    public static func debug(_ block: () -> Void) {
+     static func debug(_ block: () -> Void) {
         if isDebug {
             block()
         }
@@ -63,7 +63,7 @@ public enum SFApp {
     /// Executes a block only if NOT in DEBUG mode.
     ///
     /// - Parameter block: The block to be executed.
-    public static func release(_ block: () -> Void) {
+     static func release(_ block: () -> Void) {
         if !isDebug {
             block()
         }
@@ -74,7 +74,7 @@ public enum SFApp {
     ///
     /// - Parameter version: Version to be checked, you can use the variable `SFApp.version` to pass the current App version.
     /// - Returns: Returns if is first start of the App or for custom version.
-    public static func isFirstStart(version: String = "") -> Bool {
+     static func isFirstStart(version: String = "") -> Bool {
         let key: String = SFAppHasBeenOpened + version
         
         let defaults = UserDefaults.standard
@@ -90,7 +90,7 @@ public enum SFApp {
     /// - Parameters:
     ///   - version: Version to be checked, you can use the variable `SFApp.version` to pass the current App version.
     ///   - block: The block to execute, returns isFirstStart.
-    public static func onFirstStart(version: String = "", block: (_ isFirstStart: Bool) -> Void) {
+     static func onFirstStart(version: String = "", block: (_ isFirstStart: Bool) -> Void) {
         let key: String = SFAppHasBeenOpened + version
         
         let defaults = UserDefaults.standard
@@ -105,7 +105,7 @@ public enum SFApp {
     /// Reset the App like has never been started.
     ///
     /// - Parameter version: Version to be checked, you can use the variable `SFApp.version` to pass the current App version.
-    public static func resetFirstStart(version: String = "") {
+     static func resetFirstStart(version: String = "") {
         let key: String = SFAppHasBeenOpened + version
         
         let defaults = UserDefaults.standard
@@ -119,7 +119,7 @@ public enum SFApp {
     ///   - objectKey: Key to set the object.
     /// - Returns: Returns true if the operation was successful, otherwise false.
     @discardableResult
-    public static func setAppSetting(object: Any, forKey objectKey: String) -> Bool {
+     static func setAppSetting(object: Any, forKey objectKey: String) -> Bool {
         FileManager.default.setSettings(filename: SFApp.name, object: object, forKey: objectKey)
     }
     
@@ -127,14 +127,14 @@ public enum SFApp {
     ///
     /// - Parameter objectKey: Key to get the object.
     /// - Returns: Returns the object for the given key.
-    public static func getAppSetting(objectKey: String) -> Any? {
+     static func getAppSetting(objectKey: String) -> Any? {
         FileManager.default.getSettings(filename: SFApp.name, forKey: objectKey)
     }
     
     /// Check if the app has been installed from TestFlight.
     ///
     /// - Returns: Returns `true` if the app has been installed via TestFlight, otherwise `false`.
-    public static func isFromTestFlight() -> Bool {
+     static func isFromTestFlight() -> Bool {
         guard let appStoreReceiptURL = Bundle.main.appStoreReceiptURL else {
             return false
         }
@@ -146,7 +146,7 @@ public enum SFApp {
 // MARK: - SFApp extension
 
 /// Extends SFApp with project infos.
-public extension SFApp {
+ extension SFApp {
     // MARK: - Variables
     
     /// Return the App name.

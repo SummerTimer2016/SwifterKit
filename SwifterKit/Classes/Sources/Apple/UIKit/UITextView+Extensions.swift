@@ -30,7 +30,7 @@ import UIKit
 // MARK: - UITextView extension
 
 /// This extesion adds some useful functions to UITextView.
-public extension UITextView {
+ extension UITextView {
     // MARK: - Functions
     
     /// Create an UITextView and set some parameters.
@@ -122,7 +122,7 @@ public extension UITextView {
 }
 // MARK: - Methods
 
-public extension UITextView {
+ extension UITextView {
     /// SwifterSwift: Clear text.
     func clear() {
         text = ""

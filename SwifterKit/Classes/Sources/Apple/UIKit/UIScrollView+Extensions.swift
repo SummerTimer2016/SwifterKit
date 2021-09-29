@@ -29,7 +29,7 @@ import UIKit
 
 // MARK: - Methods
 
-public extension UIScrollView {
+ extension UIScrollView {
     /// SwifterSwift: Takes a snapshot of an entire ScrollView.
     ///
     ///    AnySubclassOfUIScrollView().snapshot
@@ -60,7 +60,7 @@ public extension UIScrollView {
     }
 }
 
-public extension UIScrollView {
+ extension UIScrollView {
     /// SwifterSwift: Scroll to the top-most content offset.
     /// - Parameter animated: `true` to animate the transition at a constant velocity to the new offset, `false` to make the transition immediate.
     func scrollToTop(animated: Bool = true) {
@@ -157,7 +157,7 @@ public extension UIScrollView {
 // MARK: - UIScrollView extension
 
 /// This extesion adds some useful functions to UIScrollView.
-public extension UIScrollView {
+ extension UIScrollView {
     // MARK: - Functions
     
     /// Create an UIScrollView and set some parameters.

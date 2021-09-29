@@ -36,7 +36,7 @@ import Glibc
 
 // MARK: - Date extension
 // MARK: - Enums
-public extension Date {
+ extension Date {
     /// SwifterSwift: Day name format.
     ///
     /// - threeLetters: 3 letter day abbreviation of day name.
@@ -87,7 +87,7 @@ public extension Date {
 }
 // MARK: - Properties
 /// This extension add some useful functions to Date.
-public extension Date {
+ extension Date {
     
     // MARK: - Variables
     /// SwifterSwift: User’s current calendar.
@@ -466,9 +466,6 @@ public extension Date {
     ///     let date = Date() // "Oct 3, 2018, 10:57:11"
     ///     let yesterday = date.yesterday // "Oct 2, 2018, 10:57:11"
     ///
-    var yesterday: Date {
-        return calendar.date(byAdding: .day, value: -1, to: self) ?? Date()
-    }
     
     /// SwifterSwift: Tomorrow's date.
     ///
@@ -531,11 +528,11 @@ public extension Date {
     }
 }
 // MARK: - Methods
-public extension Date {
+ extension Date {
     
     /// 获取时间，根据当前日期时区
     /// - Returns: <#description#>
-    public func getCurrentDate() -> Date {
+     func getCurrentDate() -> Date {
         let date = Date()
         let zone = TimeZone.current
         let localDate = date.addingTimeInterval(TimeInterval(zone.secondsFromGMT(for: date)))
@@ -819,70 +816,6 @@ public extension Date {
             self = date
         }
     }
-    // swiftlint:disable function_body_length
-    /// SwifterSwift: Date at the end of calendar component.
-    ///
-    ///     let date = Date() // "Jan 12, 2017, 7:27 PM"
-    ///     let date2 = date.end(of: .day) // "Jan 12, 2017, 11:59 PM"
-    ///     let date3 = date.end(of: .month) // "Jan 31, 2017, 11:59 PM"
-    ///     let date4 = date.end(of: .year) // "Dec 31, 2017, 11:59 PM"
-    ///
-    /// - Parameter component: calendar component to get date at the end of.
-    /// - Returns: date at the end of calendar component (if applicable).
-    func end(of component: Calendar.Component) -> Date? {
-        switch component {
-        case .second:
-            var date = adding(.second, value: 1)
-            date = calendar.date(from:
-                                    calendar.dateComponents([.year, .month, .day, .hour, .minute, .second], from: date))!
-            date.add(.second, value: -1)
-            return date
-            
-        case .minute:
-            var date = adding(.minute, value: 1)
-            let after = calendar.date(from:
-                                        calendar.dateComponents([.year, .month, .day, .hour, .minute], from: date))!
-            date = after.adding(.second, value: -1)
-            return date
-            
-        case .hour:
-            var date = adding(.hour, value: 1)
-            let after = calendar.date(from:
-                                        calendar.dateComponents([.year, .month, .day, .hour], from: date))!
-            date = after.adding(.second, value: -1)
-            return date
-            
-        case .day:
-            var date = adding(.day, value: 1)
-            date = calendar.startOfDay(for: date)
-            date.add(.second, value: -1)
-            return date
-            
-        case .weekOfYear, .weekOfMonth:
-            var date = self
-            let beginningOfWeek = calendar.date(from:
-                                                    calendar.dateComponents([.yearForWeekOfYear, .weekOfYear], from: date))!
-            date = beginningOfWeek.adding(.day, value: 7).adding(.second, value: -1)
-            return date
-            
-        case .month:
-            var date = adding(.month, value: 1)
-            let after = calendar.date(from:
-                                        calendar.dateComponents([.year, .month], from: date))!
-            date = after.adding(.second, value: -1)
-            return date
-            
-        case .year:
-            var date = adding(.year, value: 1)
-            let after = calendar.date(from:
-                                        calendar.dateComponents([.year], from: date))!
-            date = after.adding(.second, value: -1)
-            return date
-            
-        default:
-            return nil
-        }
-    }
     
     // swiftlint:enable function_body_length
     
@@ -1006,7 +939,7 @@ public extension Date {
     }
 }
 // MARK: - Initializers
-public extension Date {
+ extension Date {
     /// Creates a Date object from year, month and day as Int.
     ///
     /// - Parameters:

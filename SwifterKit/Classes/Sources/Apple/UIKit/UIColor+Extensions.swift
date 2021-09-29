@@ -41,7 +41,7 @@ import Foundation
 ///   - blue: Blue value.
 ///   - alpha: Alpha value.
 /// - Returns: Returns the created UIColor or NSColor.
-public func RGBA(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Float) -> Color {
+ func RGBA(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Float) -> Color {
     #if canImport(UIKit)
         return Color(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha))
     #elseif canImport(AppKit)
@@ -57,7 +57,7 @@ public func RGBA(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Float) -> Color
 ///   - green: Green value.
 ///   - blue: Blue value.
 /// - Returns: Returns the created UIColor or NSColor.
-public func ARGB( _ alpha: Float, _ red: Int, _ green: Int, _ blue: Int) -> Color {
+ func ARGB( _ alpha: Float, _ red: Int, _ green: Int, _ blue: Int) -> Color {
     RGBA(red, green, blue, alpha)
 }
 
@@ -68,7 +68,7 @@ public func ARGB( _ alpha: Float, _ red: Int, _ green: Int, _ blue: Int) -> Colo
 ///   - green: Green value.
 ///   - blue: Blue value.
 /// - Returns: Returns the created UIColor or NSColor.
-public func RGB(_ red: Int, _ green: Int, _ blue: Int) -> Color {
+ func RGB(_ red: Int, _ green: Int, _ blue: Int) -> Color {
     #if canImport(UIKit)
         return Color(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
     #elseif canImport(AppKit)
@@ -79,7 +79,7 @@ public func RGB(_ red: Int, _ green: Int, _ blue: Int) -> Color {
 // MARK: - UIColor or NSColor extension
 
 /// This extesion adds some useful functions to UIColor or NSColor.
-public extension Color {
+ extension Color {
     // MARK: - Variables
 
     #if canImport(UIKit)

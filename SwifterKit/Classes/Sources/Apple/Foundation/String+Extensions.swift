@@ -29,7 +29,7 @@ import Foundation
 // MARK: - String extension
 
 /// This extesion adds some useful functions to String.
-public extension String {
+ extension String {
     // MARK: - Variables
     
     /// Gets the individual characters and puts them in an array as Strings.
@@ -665,7 +665,7 @@ public extension String {
 }
 
 // MARK: - Operators
-public extension String {
+ extension String {
     /// SwifterSwift: Repeat string multiple times.
     ///
     ///        'bar' * 3 -> "barbarbar"
@@ -702,7 +702,7 @@ infix operator ???: NilCoalescingPrecedence
 ///   - optional: The optional variable.
 ///   - defaultValue: The default value.
 /// - Returns: Returns defaultValue if optional is nil, otherwise returns optional.
-public func ??? <T>(optional: T?, defaultValue: @autoclosure () -> String) -> String {
+ func ??? <T>(optional: T?, defaultValue: @autoclosure () -> String) -> String {
     optional.map { String(describing: $0) } ?? defaultValue()
 }
 

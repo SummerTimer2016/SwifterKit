@@ -29,7 +29,7 @@ import Foundation
 
 // MARK: - Properties
 /// This extension add some useful functions to Data.
-public extension Data {
+ extension Data {
     /// SwifterSwift: Return data as an array of bytes.
     var bytes: [UInt8] {
         // http://stackoverflow.com/questions/38097710/swift-3-changes-for-getbytes-method
@@ -38,7 +38,7 @@ public extension Data {
 }
 
 // MARK: - Methods
-public extension Data {
+ extension Data {
     // MARK: - Functions
     /// Convert self to a UTF8 String.
     ///

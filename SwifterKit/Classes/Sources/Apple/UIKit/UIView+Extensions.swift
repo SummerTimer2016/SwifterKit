@@ -30,7 +30,7 @@ import UIKit
 
 // MARK: - UIView extension
 // MARK: - Enum
-public extension UIView {
+ extension UIView {
     // MARK: - Variables
     
     /// Direction of flip animation.
@@ -81,7 +81,7 @@ public extension UIView {
 }
 /// This extesion adds some useful functions to UIView
 // MARK: - Functions
-public extension UIView {
+ extension UIView {
     
     /// Create an UIView with the given frame and background color.
     ///
@@ -448,7 +448,7 @@ public extension UIView {
 }
 // MARK: - UIView animatable extension
 /// Extends UIView with animatable functions.
-public extension UIView {
+ extension UIView {
     /// Create a shake effect.
     ///
     /// - Parameters:
@@ -605,7 +605,7 @@ extension UIView {
     // MARK: - Variables
     
     /// Inspectable border size.
-    @IBInspectable public var layerBorderWidth: CGFloat {
+    @IBInspectable  var layerBorderWidth: CGFloat {
         get {
             layer.borderWidth
         }
@@ -615,7 +615,7 @@ extension UIView {
     }
     
     /// Inspectable border color.
-    @IBInspectable public var layerBorderColor: UIColor {
+    @IBInspectable  var layerBorderColor: UIColor {
         get {
             guard let borderColor = layer.borderColor else {
                 return UIColor.clear
@@ -633,7 +633,7 @@ extension UIView {
     /// Set it to true if you want to enable corner radius.
     ///
     /// Set it to false if you want to enable shadow.
-    @IBInspectable public var maskToBounds: Bool {
+    @IBInspectable  var maskToBounds: Bool {
         get {
             layer.masksToBounds
         }
@@ -645,7 +645,7 @@ extension UIView {
     /// Inspectable corners size.
     ///
     /// Remeber to set maskToBounds to true.
-    @IBInspectable public var layerCornerRadius: CGFloat {
+    @IBInspectable  var layerCornerRadius: CGFloat {
         get {
             layer.cornerRadius
         }
@@ -657,7 +657,7 @@ extension UIView {
     /// Inspectable shadow color.
     ///
     /// Remeber to set maskToBounds to false.
-    @IBInspectable public var layerShadowColor: UIColor {
+    @IBInspectable  var layerShadowColor: UIColor {
         get {
             guard let shadowColor = layer.shadowColor else {
                 return UIColor.clear
@@ -673,7 +673,7 @@ extension UIView {
     /// Inspectable shadow opacity.
     ///
     /// Remeber to set maskToBounds to false.
-    @IBInspectable public var layerShadowOpacity: Float {
+    @IBInspectable  var layerShadowOpacity: Float {
         get {
             layer.shadowOpacity
         }
@@ -685,7 +685,7 @@ extension UIView {
     /// Inspectable shadow offset X.
     ///
     /// Remeber to set maskToBounds to false.
-    @IBInspectable public var layerShadowOffsetX: CGFloat {
+    @IBInspectable  var layerShadowOffsetX: CGFloat {
         get {
             layer.shadowOffset.width
         }
@@ -697,7 +697,7 @@ extension UIView {
     /// Inspectable shadow offset Y.
     ///
     /// Remeber to set maskToBounds to false.
-    @IBInspectable public var layerShadowOffsetY: CGFloat {
+    @IBInspectable  var layerShadowOffsetY: CGFloat {
         get {
             layer.shadowOffset.height
         }
@@ -709,7 +709,7 @@ extension UIView {
     /// Inspectable shadow radius.
     ///
     /// Remeber to set maskToBounds to false.
-    @IBInspectable public var layerShadowRadius: CGFloat {
+    @IBInspectable  var layerShadowRadius: CGFloat {
         get {
             layer.shadowRadius
         }

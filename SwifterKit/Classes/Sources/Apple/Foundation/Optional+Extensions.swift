@@ -2,7 +2,7 @@
 
 // MARK: - Methods
 
-public extension Optional {
+ extension Optional {
     /// SwifterSwift: Get self of default value (if self is nil).
     ///
     ///		let foo: String? = nil
@@ -88,7 +88,7 @@ public extension Optional {
 
 // MARK: - Methods (Collection)
 
-public extension Optional where Wrapped: Collection {
+ extension Optional where Wrapped: Collection {
     /// SwifterSwift: Check if optional is nil or empty collection.
     var isNilOrEmpty: Bool {
         guard let collection = self else { return true }
@@ -105,7 +105,7 @@ public extension Optional where Wrapped: Collection {
 
 // MARK: - Methods (RawRepresentable, RawValue: Equatable)
 
-public extension Optional where Wrapped: RawRepresentable, Wrapped.RawValue: Equatable {
+ extension Optional where Wrapped: RawRepresentable, Wrapped.RawValue: Equatable {
     // swiftlint:disable missing_swifterswift_prefix
 
     /// Returns a Boolean value indicating whether two values are equal.

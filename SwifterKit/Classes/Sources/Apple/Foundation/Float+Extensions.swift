@@ -12,7 +12,7 @@ import Glibc
 
 // MARK: - Properties
 
-public extension Float {
+ extension Float {
     /// SwifterSwift: Int.
     var int: Int {
         return Int(self)
@@ -41,7 +41,7 @@ infix operator **: PowerPrecedence
 ///   - lhs: base float.
 ///   - rhs: exponent float.
 /// - Returns: exponentiation result (4.4 ** 0.5 = 2.0976176963).
-public func ** (lhs: Float, rhs: Float) -> Float {
+ func ** (lhs: Float, rhs: Float) -> Float {
     // http://nshipster.com/swift-operators/
     return pow(lhs, rhs)
 }

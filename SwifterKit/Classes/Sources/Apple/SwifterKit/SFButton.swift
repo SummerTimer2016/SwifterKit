@@ -33,7 +33,7 @@ open class SFButton: UIButton {
     // MARK: - Variables
     
     /// The fade duration.
-    public var fadeDuration: TimeInterval = 0
+     var fadeDuration: TimeInterval = 0
     
     /// The animation on highlighted status.
     override open var isHighlighted: Bool {
@@ -61,7 +61,7 @@ open class SFButton: UIButton {
     }
     
     /// The overlay image, cannot be nil.
-    public var overlayImageView: UIImageView! { // swiftlint:disable:this implicitly_unwrapped_optional
+     var overlayImageView: UIImageView! { // swiftlint:disable:this implicitly_unwrapped_optional
         didSet(newOverlayImageView) {
             if overlayImageView != newOverlayImageView, newOverlayImageView != nil {
                 overlayImageView = newOverlayImageView
@@ -79,7 +79,7 @@ open class SFButton: UIButton {
     ///
     /// - Parameter aDecoder: NSCoder.
     /// - Returns: The initialized instance.
-    public required init?(coder aDecoder: NSCoder) {
+     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
         fadeDuration = aDecoder.decodeDouble(forKey: "FadeDuration")
@@ -111,7 +111,7 @@ open class SFButton: UIButton {
     ///   - image: Button image.
     ///   - highlightedImage: Button highlighted image.
     ///   - fadeDuration: Fade duration.
-    public init(frame: CGRect, image: UIImage, highlightedImage: UIImage, fadeDuration: TimeInterval) {
+     init(frame: CGRect, image: UIImage, highlightedImage: UIImage, fadeDuration: TimeInterval) {
         self.fadeDuration = fadeDuration
         
         super.init(frame: frame)

@@ -29,16 +29,16 @@ import Foundation
 // MARK: - Global functions
 
 /// The private BFLogClass created to manage the log strings.
-public enum SFDebuLog {
+ enum SFDebuLog {
     // MARK: - Variables
     
     /// Activate or not BFLog.
-    public static var active: Bool = false
+     static var active: Bool = false
     
     /// The log string.
-    public static var logged: String = ""
+     static var logged: String = ""
     /// The detailed log string.
-    public static var detailedLog: String = ""
+     static var detailedLog: String = ""
     
     // MARK: - Functions
     
@@ -51,7 +51,7 @@ public enum SFDebuLog {
     ///   - filename: File. Default is #file.
     ///   - function: Function name. Default is #function.
     ///   - line: Line number. Default is #line.
-    public static func log(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
+     static func log(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
         if active {
             logged += message + "\n"
             
@@ -73,7 +73,7 @@ public enum SFDebuLog {
     ///   - filename: File. Default is #file.
     ///   - function: Function name. Default is #function.
     ///   - line: Line number. Default is #line.
-    public static func warning(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
+     static func warning(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
         log("[WARNING] \(message)", filename: filename, function: function, line: line)
     }
     
@@ -86,7 +86,7 @@ public enum SFDebuLog {
     ///   - filename: File. Default is #file.
     ///   - function: Function name. Default is #function.
     ///   - line: Line number. Default is #line.
-    public static func error(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
+     static func error(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
         log("[ERROR] \(message)", filename: filename, function: function, line: line)
     }
     
@@ -99,7 +99,7 @@ public enum SFDebuLog {
     ///   - filename: File. Default is #file.
     ///   - function: Function name. Default is #function.
     ///   - line: Line number. Default is #line.
-    public static func debug(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
+     static func debug(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
         log("[DEBUG] \(message)", filename: filename, function: function, line: line)
     }
     
@@ -112,12 +112,12 @@ public enum SFDebuLog {
     ///   - filename: File. Default is #file.
     ///   - function: Function name. Default is #function.
     ///   - line: Line number. Default is #line.
-    public static func info(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
+     static func info(_ message: String, filename: String = #file, function: StaticString = #function, line: Int = #line) {
         log("[INFO] \(message)", filename: filename, function: function, line: line)
     }
     
     /// Clear the log string.
-    public static func clear() {
+     static func clear() {
         logged = ""
         detailedLog = ""
     }
@@ -128,7 +128,7 @@ public enum SFDebuLog {
     ///   - path: Save path.
     ///   - filename: Log filename.
     /// - Throws: write(toFile:, atomically:, encoding:) errors.
-    public static func saveLog(in path: FileManager.PathType, filename: String) throws {
+     static func saveLog(in path: FileManager.PathType, filename: String) throws {
         try FileManager.default.save(file: filename, in: path, content: detailedLog)
     }
 }

@@ -6,7 +6,7 @@ import Foundation
 
 // MARK: - Properties
 
-public extension FloatingPoint {
+ extension FloatingPoint {
     /// SwifterSwift: Absolute value of number.
     var abs: Self {
         return Swift.abs(self)
@@ -57,7 +57,7 @@ infix operator ±
 ///   - lhs: number.
 ///   - rhs: number.
 /// - Returns: tuple of plus-minus operation ( 2.5 ± 1.5 -> (4, 1)).
-public func ± <T: FloatingPoint>(lhs: T, rhs: T) -> (T, T) {
+ func ± <T: FloatingPoint>(lhs: T, rhs: T) -> (T, T) {
     // http://nshipster.com/swift-operators/
     return (lhs + rhs, lhs - rhs)
 }
@@ -70,7 +70,7 @@ prefix operator ±
 ///
 /// - Parameter int: number.
 /// - Returns: tuple of plus-minus operation (± 2.5 -> (2.5, -2.5)).
-public prefix func ± <T: FloatingPoint>(number: T) -> (T, T) {
+ prefix func ± <T: FloatingPoint>(number: T) -> (T, T) {
     // http://nshipster.com/swift-operators/
     return 0 ± number
 }
@@ -83,7 +83,7 @@ prefix operator √
 ///
 /// - Parameter float: float value to find square root for.
 /// - Returns: square root of given float.
-public prefix func √ <T>(float: T) -> T where T: FloatingPoint {
+ prefix func √ <T>(float: T) -> T where T: FloatingPoint {
     // http://nshipster.com/swift-operators/
     return sqrt(float)
 }

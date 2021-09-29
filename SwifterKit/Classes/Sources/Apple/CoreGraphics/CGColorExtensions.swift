@@ -13,7 +13,7 @@ import AppKit
 
 // MARK: - Properties
 
-public extension CGColor {
+ extension CGColor {
     #if canImport(UIKit)
     /// SwifterSwift: UIColor.
     var uiColor: UIColor? {

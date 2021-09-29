@@ -27,7 +27,6 @@
 		C49EB870270432990016ECC0 /* Bool+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49EB86A270432980016ECC0 /* Bool+Extensions.swift */; };
 		C49EB871270432990016ECC0 /* Optional+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49EB86B270432980016ECC0 /* Optional+Extensions.swift */; };
 		C49EB872270432990016ECC0 /* FloatingPoint+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49EB86C270432980016ECC0 /* FloatingPoint+Extensions.swift */; };
-		C49EB873270432990016ECC0 /* Int+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49EB86D270432990016ECC0 /* Int+Extensions.swift */; };
 		ED1E05B5E254C33F26471990 /* Pods_SwifterKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002A76A65589D6C02143B6CA /* Pods_SwifterKit_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -116,7 +115,6 @@
 		C49EB86A270432980016ECC0 /* Bool+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Bool+Extensions.swift"; sourceTree = "<group>"; };
 		C49EB86B270432980016ECC0 /* Optional+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Optional+Extensions.swift"; sourceTree = "<group>"; };
 		C49EB86C270432980016ECC0 /* FloatingPoint+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "FloatingPoint+Extensions.swift"; sourceTree = "<group>"; };
-		C49EB86D270432990016ECC0 /* Int+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Int+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -316,7 +314,6 @@
 				C49EB869270432980016ECC0 /* Double+Extensions.swift */,
 				C49EB868270432980016ECC0 /* Float+Extensions.swift */,
 				C49EB86C270432980016ECC0 /* FloatingPoint+Extensions.swift */,
-				C49EB86D270432990016ECC0 /* Int+Extensions.swift */,
 				C49EB86B270432980016ECC0 /* Optional+Extensions.swift */,
 				C49EB86227042AB10016ECC0 /* URL+Extensions.swift */,
 				C49EB86327042AB10016ECC0 /* URL+RequestExtensions.swift */,
@@ -499,7 +496,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C49EB873270432990016ECC0 /* Int+Extensions.swift in Sources */,
 				C49EB85E270425800016ECC0 /* CGSizeExtensions.swift in Sources */,
 				C49EB86527042AB10016ECC0 /* URL+RequestExtensions.swift in Sources */,
 				C41C507E2673069100FE8FFE /* SkyFloatingLabelTextField.swift in Sources */,
@@ -571,7 +567,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -617,7 +613,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";

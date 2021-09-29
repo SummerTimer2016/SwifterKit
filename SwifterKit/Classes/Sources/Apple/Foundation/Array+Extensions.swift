@@ -36,7 +36,7 @@ import Foundation
 ///
 /// - Parameter array: Array bo te flattened.
 /// - Returns: Returns a flatten array.
-public func flatten<T>(_ array: [T]) -> [T] {
+ func flatten<T>(_ array: [T]) -> [T] {
     /// Returned flattened array.
     var flattened: [T] = []
     
@@ -62,7 +62,7 @@ public func flatten<T>(_ array: [T]) -> [T] {
 // MARK: - Array extension
 
 /// This extension adds some useful functions to Array.
-public extension Array {
+ extension Array {
     // MARK: - Functions
     
     /// A Bool value indicating whether the collection is not empty.
