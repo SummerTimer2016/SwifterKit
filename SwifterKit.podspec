@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'SwifterKit'
-  s.version = '1.0.7'
+  s.version = '1.0.8'
   s.summary = 'SwifterKit is a collection SwifterSwift And BFKit'
   s.description = <<-DESC
   SwifterKit is a collection SwifterSwift And BFKit, with handy methods, syntactic sugar, and performance improvements for wide range of primitive data types, UIKit and Cocoa classes –over 500 in 1– for iOS, macOS, tvOS and watchOS.
