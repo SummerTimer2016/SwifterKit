@@ -80,8 +80,7 @@ open class SFButton: UIButton {
     /// - Parameter aDecoder: NSCoder.
     /// - Returns: The initialized instance.
      required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
+         fatalError("init(coder:) has not been implemented")
         fadeDuration = aDecoder.decodeDouble(forKey: "FadeDuration")
         guard let decodedOverlayImageView = aDecoder.decodeObject(forKey: "OverlayImageView") as? UIImageView else {
             return nil

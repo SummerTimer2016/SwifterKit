@@ -44,8 +44,7 @@ open class SFTextField: UITextField {
     ///
     /// - Returns: The initialized instance.
      required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        
+         fatalError("init(coder:) has not been implemented")
         maxNumberOfCharacters = aDecoder.decodeInteger(forKey: "MaxNumberOfCharacters")
         NotificationCenter.default.addObserver(self, selector: #selector(SFTextField.textFieldDidChange(_:)), name: UITextField.textDidChangeNotification, object: self)
     }
