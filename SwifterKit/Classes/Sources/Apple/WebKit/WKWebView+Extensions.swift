@@ -24,23 +24,42 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-import Foundation
+
+#if canImport(WebKit)
 import WebKit
 
 // MARK: - WKWebView extension
 
 /// This exension adds some useful functions to WKWebView.
 public extension WKWebView {
-  // MARK: - Functions
-  
-  /// Load the requested website.
-  ///
-  /// - Parameter website: Website to load
-  func load(website: String) {
-    guard let url = URL(string: website) else {
-      return
+    // MARK: - Functions
+    
+    /// Load the requested website.
+    ///
+    /// - Parameter website: Website to load
+    func load(website: String) {
+        guard let url = URL(string: website) else {
+            return
+        }
+        
+        load(URLRequest(url: url))
+    }
+    @discardableResult
+    public func loadURL(_ url: URL) -> WKNavigation? {
+        return load(URLRequest(url: url))
     }
     
-    load(URLRequest(url: url))
-  }
+    /// SwifterSwift: Navigate to url using `String`.
+    /// - Parameter urlString: The string specifying the URL to navigate to.
+    /// - Returns: A new navigation for given `urlString`.
+    @discardableResult
+    public func loadURLString(_ urlString: String, timeout: TimeInterval? = nil) -> WKNavigation? {
+        guard let url = URL(string: urlString) else { return nil }
+        var request = URLRequest(url: url)
+        if let timeout = timeout {
+            request.timeoutInterval = timeout
+        }
+        return load(request)
+    }
 }
+#endif

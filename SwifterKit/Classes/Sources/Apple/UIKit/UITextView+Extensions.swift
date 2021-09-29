@@ -23,9 +23,9 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-
-import Foundation
+#if canImport(UIKit) && !os(watchOS)
 import UIKit
+
 
 // MARK: - UITextView extension
 
@@ -120,3 +120,35 @@ public extension UITextView {
         UIPasteboard.copy(text: text)
     }
 }
+// MARK: - Methods
+
+public extension UITextView {
+    /// SwifterSwift: Clear text.
+    func clear() {
+        text = ""
+        attributedText = NSAttributedString(string: "")
+    }
+
+    /// SwifterSwift: Scroll to the bottom of text view.
+    func scrollToBottom() {
+        let range = NSRange(location: (text as NSString).length - 1, length: 1)
+        scrollRangeToVisible(range)
+    }
+
+    /// SwifterSwift: Scroll to the top of text view.
+    func scrollToTop() {
+        let range = NSRange(location: 0, length: 1)
+        scrollRangeToVisible(range)
+    }
+
+    /// SwifterSwift: Wrap to the content (Text / Attributed Text).
+    func wrapToContent() {
+        contentInset = .zero
+        scrollIndicatorInsets = .zero
+        contentOffset = .zero
+        textContainerInset = .zero
+        textContainer.lineFragmentPadding = 0
+        sizeToFit()
+    }
+}
+#endif

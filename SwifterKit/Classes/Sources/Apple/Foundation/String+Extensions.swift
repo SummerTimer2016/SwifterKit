@@ -664,6 +664,35 @@ public extension String {
     #endif
 }
 
+// MARK: - Operators
+public extension String {
+    /// SwifterSwift: Repeat string multiple times.
+    ///
+    ///        'bar' * 3 -> "barbarbar"
+    ///
+    /// - Parameters:
+    ///   - lhs: string to repeat.
+    ///   - rhs: number of times to repeat character.
+    /// - Returns: new string with given string repeated n times.
+    static func * (lhs: String, rhs: Int) -> String {
+        guard rhs > 0 else { return "" }
+        return String(repeating: lhs, count: rhs)
+    }
+
+    /// SwifterSwift: Repeat string multiple times.
+    ///
+    ///        3 * 'bar' -> "barbarbar"
+    ///
+    /// - Parameters:
+    ///   - lhs: number of times to repeat character.
+    ///   - rhs: string to repeat.
+    /// - Returns: new string with given string repeated n times.
+    static func * (lhs: Int, rhs: String) -> String {
+        guard lhs > 0 else { return "" }
+        return String(repeating: rhs, count: lhs)
+    }
+}
+
 /// Infix operator `???` with NilCoalescingPrecedence.
 infix operator ???: NilCoalescingPrecedence
 
@@ -676,3 +705,4 @@ infix operator ???: NilCoalescingPrecedence
 public func ??? <T>(optional: T?, defaultValue: @autoclosure () -> String) -> String {
     optional.map { String(describing: $0) } ?? defaultValue()
 }
+
