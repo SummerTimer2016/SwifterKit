@@ -8,9 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		C41C507D2673069100FE8FFE /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41C507B2673069000FE8FFE /* SkyFloatingLabelTextFieldWithIcon.swift */; };
-		C41C507E2673069100FE8FFE /* SkyFloatingLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41C507C2673069100FE8FFE /* SkyFloatingLabelTextField.swift */; };
-		C41C50802673069800FE8FFE /* UITextField+fixCaretPosition.swift in Sources */ = {isa = PBXBuildFile; fileRef = C41C507F2673069800FE8FFE /* UITextField+fixCaretPosition.swift */; };
 		C49EB852270425520016ECC0 /* CATransform3DExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49EB850270425520016ECC0 /* CATransform3DExtensions.swift */; };
 		C49EB85A270425800016ECC0 /* CGRectExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49EB8532704257F0016ECC0 /* CGRectExtensions.swift */; };
 		C49EB85B270425800016ECC0 /* CGAffineTransformExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49EB854270425800016ECC0 /* CGAffineTransformExtensions.swift */; };
@@ -41,9 +38,6 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		6FD032F8C94B5C909952BF2E /* Pods-SwifterKit_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SwifterKit_Tests.release.xcconfig"; path = "Target Support Files/Pods-SwifterKit_Tests/Pods-SwifterKit_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		C41C50792673066B00FE8FFE /* Device+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Device+Extensions.swift"; sourceTree = "<group>"; };
-		C41C507B2673069000FE8FFE /* SkyFloatingLabelTextFieldWithIcon.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextFieldWithIcon.swift; sourceTree = "<group>"; };
-		C41C507C2673069100FE8FFE /* SkyFloatingLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SkyFloatingLabelTextField.swift; sourceTree = "<group>"; };
-		C41C507F2673069800FE8FFE /* UITextField+fixCaretPosition.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UITextField+fixCaretPosition.swift"; sourceTree = "<group>"; };
 		C48DDF05264E298200575E33 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
 		C48DDF09264E298200575E33 /* WKWebView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "WKWebView+Extensions.swift"; sourceTree = "<group>"; };
 		C48DDF0D264E298200575E33 /* UIImageView+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImageView+Extensions.swift"; sourceTree = "<group>"; };
@@ -184,16 +178,6 @@
 			name = "Podspec Metadata";
 			sourceTree = "<group>";
 		};
-		C41C507A2673068300FE8FFE /* SkyFloating */ = {
-			isa = PBXGroup;
-			children = (
-				C41C507F2673069800FE8FFE /* UITextField+fixCaretPosition.swift */,
-				C41C507C2673069100FE8FFE /* SkyFloatingLabelTextField.swift */,
-				C41C507B2673069000FE8FFE /* SkyFloatingLabelTextFieldWithIcon.swift */,
-			);
-			path = SkyFloating;
-			sourceTree = "<group>";
-		};
 		C48DDF03264E298200575E33 /* SwifterKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -226,7 +210,6 @@
 			children = (
 				C49EB861270426060016ECC0 /* Dispatch */,
 				C49EB84E270425520016ECC0 /* CoreAnimation */,
-				C41C507A2673068300FE8FFE /* SkyFloating */,
 				C48DDF08264E298200575E33 /* WebKit */,
 				C48DDF0A264E298200575E33 /* CoreGraphics */,
 				C48DDF0C264E298200575E33 /* UIKit */,
@@ -498,7 +481,6 @@
 			files = (
 				C49EB85E270425800016ECC0 /* CGSizeExtensions.swift in Sources */,
 				C49EB86527042AB10016ECC0 /* URL+RequestExtensions.swift in Sources */,
-				C41C507E2673069100FE8FFE /* SkyFloatingLabelTextField.swift in Sources */,
 				C49EB85B270425800016ECC0 /* CGAffineTransformExtensions.swift in Sources */,
 				C49EB85A270425800016ECC0 /* CGRectExtensions.swift in Sources */,
 				C49EB85D270425800016ECC0 /* CGFloatExtensions.swift in Sources */,
@@ -510,12 +492,10 @@
 				C49EB85F270425800016ECC0 /* CGVectorExtensions.swift in Sources */,
 				C49EB852270425520016ECC0 /* CATransform3DExtensions.swift in Sources */,
 				C49EB86F270432990016ECC0 /* Double+Extensions.swift in Sources */,
-				C41C50802673069800FE8FFE /* UITextField+fixCaretPosition.swift in Sources */,
 				C49EB871270432990016ECC0 /* Optional+Extensions.swift in Sources */,
 				C49EB860270425800016ECC0 /* CGPointExtensions.swift in Sources */,
 				C49EB870270432990016ECC0 /* Bool+Extensions.swift in Sources */,
 				C49EB86727042C770016ECC0 /* UIStoryboard+Extensions.swift in Sources */,
-				C41C507D2673069100FE8FFE /* SkyFloatingLabelTextFieldWithIcon.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

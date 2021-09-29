@@ -20,7 +20,7 @@ extension CATransform3D: Equatable {
     ///   - lhs: A value to compare.
     ///   - rhs: Another value to compare.
     @inlinable
-     static func == (lhs: CATransform3D, rhs: CATransform3D) -> Bool {
+    public static func == (lhs: CATransform3D, rhs: CATransform3D) -> Bool {
         CATransform3DEqualToTransform(lhs, rhs)
     }
 
@@ -45,7 +45,7 @@ extension CATransform3D: Codable {
     /// This initializer throws an error if reading from the decoder fails, or if the data read is corrupted or otherwise invalid.
     /// - Parameter decoder: The decoder to read data from.
     @inlinable
-     init(from decoder: Decoder) throws {
+    public init(from decoder: Decoder) throws {
         var container = try decoder.unkeyedContainer()
         self.init(m11: try container.decode(CGFloat.self),
                   m12: try container.decode(CGFloat.self),
@@ -72,7 +72,7 @@ extension CATransform3D: Codable {
     /// This function throws an error if any values are invalid for the given encoder’s format.
     /// - Parameter encoder: The encoder to write data to.
     @inlinable
-     func encode(to encoder: Encoder) throws {
+    public func encode(to encoder: Encoder) throws {
         var container = encoder.unkeyedContainer()
         try container.encode(m11)
         try container.encode(m12)
