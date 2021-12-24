@@ -23,23 +23,15 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-#if canImport(Foundation)
+
 import Foundation
 
+// MARK: - Data extension
 
-// MARK: - Properties
 /// This extension add some useful functions to Data.
- extension Data {
-    /// SwifterSwift: Return data as an array of bytes.
-    var bytes: [UInt8] {
-        // http://stackoverflow.com/questions/38097710/swift-3-changes-for-getbytes-method
-        return [UInt8](self)
-    }
-}
-
-// MARK: - Methods
- extension Data {
+public extension Data {
     // MARK: - Functions
+    
     /// Convert self to a UTF8 String.
     ///
     /// - Returns: Returns self as UTF8 NSString.
@@ -62,24 +54,4 @@ import Foundation
     func readableUUID() -> String {
         description.trimmingCharacters(in: CharacterSet(charactersIn: "<>")).replacingOccurrences(of: " ", with: "").replacingOccurrences(of: "-", with: "")
     }
-    /// SwifterSwift: String by encoding Data using the given encoding (if applicable).
-    ///
-    /// - Parameter encoding: encoding.
-    /// - Returns: String by encoding Data using the given encoding (if applicable).
-    func string(encoding: String.Encoding) -> String? {
-        return String(data: self, encoding: encoding)
-    }
-
-    /// SwifterSwift: Returns a Foundation object from given JSON data.
-    ///
-    /// - Parameter options: Options for reading the JSON data and creating the Foundation object.
-    ///
-    ///   For possible values, see `JSONSerialization.ReadingOptions`.
-    /// - Throws: An `NSError` if the receiver does not represent a valid JSON object.
-    /// - Returns: A Foundation object from the JSON data in the receiver, or `nil` if an error occurs.
-    func jsonObject(options: JSONSerialization.ReadingOptions = []) throws -> Any {
-        return try JSONSerialization.jsonObject(with: self, options: options)
-    }
 }
-
-#endif

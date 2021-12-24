@@ -29,7 +29,7 @@ import Foundation
 // MARK: - NSObject exntesion
 
 /// This extension adds some useful functions to NSObject.
- extension NSObject {
+public extension NSObject {
     // MARK: - Functions
     
     /// Check if the object is valid (not null).

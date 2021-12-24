@@ -37,7 +37,7 @@ import UIKit
 // MARK: - UIImage extension
 
 /// This extesion adds some useful functions to UIImage.
- extension UIImage {
+public extension UIImage {
     // MARK: - Functions
     
     /// Create a dummy image.

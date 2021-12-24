@@ -5,7 +5,7 @@ import CoreLocation
 
 // MARK: - Methods
 
- extension CLLocation {
+public extension CLLocation {
     /// SwifterSwift: Calculate the half-way point along a great circle path between the two points.
     ///
     /// - Parameters:

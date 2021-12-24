@@ -29,7 +29,7 @@ import Foundation
 // MARK: - ProcessInfo extension
 
 /// This extesion adds some useful functions to ProcessInfo.
- extension ProcessInfo {
+public extension ProcessInfo {
     /// Returns system uptime.
     ///
     /// - Returns: eturns system uptime.

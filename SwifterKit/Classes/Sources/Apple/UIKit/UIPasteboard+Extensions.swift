@@ -30,7 +30,7 @@ import UIKit
 // MARK: - UIPasteboard extension
 
 /// This extesion adds some useful functions to UIPasteboard.
- extension UIPasteboard {
+public extension UIPasteboard {
     // MARK: - Functions
     
     /// Copy a text to the pasteboard.

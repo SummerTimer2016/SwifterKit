@@ -23,7 +23,7 @@
 //  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
-#if canImport(Foundation)
+
 import Foundation
 #if canImport(UIKit)
     import UIKit
@@ -34,7 +34,7 @@ import Foundation
 // MARK: - NSAttributedString extension
 
 /// This extension adds some useful functions to NSAttributedString.
- extension NSAttributedString {
+public extension NSAttributedString {
     /// UIFont or NSFont, default Helvetica(Neue) 12.
     ///
     /// - Parameters:
@@ -354,49 +354,3 @@ import Foundation
         range ?? NSRange(location: 0, length: string.count)
     }
 }
-// MARK: - Operators
-
- extension NSAttributedString {
-    /// SwifterSwift: Add a NSAttributedString to another NSAttributedString.
-    ///
-    /// - Parameters:
-    ///   - lhs: NSAttributedString to add to.
-    ///   - rhs: NSAttributedString to add.
-    static func += (lhs: inout NSAttributedString, rhs: NSAttributedString) {
-        let string = NSMutableAttributedString(attributedString: lhs)
-        string.append(rhs)
-        lhs = string
-    }
-
-    /// SwifterSwift: Add a NSAttributedString to another NSAttributedString and return a new NSAttributedString instance.
-    ///
-    /// - Parameters:
-    ///   - lhs: NSAttributedString to add.
-    ///   - rhs: NSAttributedString to add.
-    /// - Returns: New instance with added NSAttributedString.
-    static func + (lhs: NSAttributedString, rhs: NSAttributedString) -> NSAttributedString {
-        let string = NSMutableAttributedString(attributedString: lhs)
-        string.append(rhs)
-        return NSAttributedString(attributedString: string)
-    }
-
-    /// SwifterSwift: Add a NSAttributedString to another NSAttributedString.
-    ///
-    /// - Parameters:
-    ///   - lhs: NSAttributedString to add to.
-    ///   - rhs: String to add.
-    static func += (lhs: inout NSAttributedString, rhs: String) {
-        lhs += NSAttributedString(string: rhs)
-    }
-
-    /// SwifterSwift: Add a NSAttributedString to another NSAttributedString and return a new NSAttributedString instance.
-    ///
-    /// - Parameters:
-    ///   - lhs: NSAttributedString to add.
-    ///   - rhs: String to add.
-    /// - Returns: New instance with added NSAttributedString.
-    static func + (lhs: NSAttributedString, rhs: String) -> NSAttributedString {
-        return lhs + NSAttributedString(string: rhs)
-    }
-}
-#endif

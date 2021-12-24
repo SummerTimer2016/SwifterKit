@@ -30,7 +30,7 @@ import UIKit
 
 // MARK: - Properties
 
- extension UITableView {
+public extension UITableView {
     /// SwifterSwift: Index path of last row in tableView.
     var indexPathForLastRow: IndexPath? {
         guard let lastSection = lastSection else { return nil }
@@ -45,7 +45,7 @@ import UIKit
 
 // MARK: - Methods
 
- extension UITableView {
+public extension UITableView {
     /// SwifterSwift: Number of all rows in all sections of tableView.
     ///
     /// - Returns: The count of all rows in the tableView.
@@ -211,7 +211,7 @@ import UIKit
 }
 
 /// This extesion adds some useful functions to UITableView.
- extension UITableView {
+public extension UITableView {
     // MARK: - Functions
     
     /// Retrive all the IndexPaths for the section.

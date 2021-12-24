@@ -30,7 +30,7 @@ import Foundation
 // MARK: - BFSystemSound struct
 
 /// This struct adds some useful functions to play system sounds.
- enum SFSystemSound {
+public enum SFSystemSound {
     // MARK: - Variables
 
     /// Audio IDs enum.
@@ -159,7 +159,7 @@ import Foundation
     /// - RingerVibeChanged:         Ringer Vibe Changed.
     /// - SilentVibeChanged:         Silent Vibe Changed.
     /// - Vibrate:                   Vibrate.
-     enum AudioID: UInt32 {
+    public enum AudioID: UInt32 {
         case newMail = 1000
         case mailSent = 1001
         case voiceMail = 1002
@@ -289,12 +289,12 @@ import Foundation
     /// Play a system sound from the ID.
     ///
     /// - Parameter audioID: ID of system audio from the AudioID enum.
-     static func playSystemSound(audioID: AudioID) {
+    public static func playSystemSound(audioID: AudioID) {
         AudioServicesPlaySystemSound(SystemSoundID(audioID.rawValue))
     }
     
     /// Play system sound vibrate.
-     static func vibrate() {
+    public static func vibrate() {
         AudioServicesPlaySystemSound(SystemSoundID(kSystemSoundID_Vibrate))
     }
     
@@ -303,7 +303,7 @@ import Foundation
     /// - Parameter soundURL: Sound URL.
     /// - Returns: Returns the SystemSoundID.
     /// - Throws: Throws SFKitError.errorLoadingSound error.
-     static func playSound(soundURL: URL) throws -> SystemSoundID {
+    public static func playSound(soundURL: URL) throws -> SystemSoundID {
         var soundID: SystemSoundID = 0
         
         let error: OSStatus = AudioServicesCreateSystemSoundID(soundURL as CFURL, &soundID)
@@ -317,7 +317,7 @@ import Foundation
     ///
     /// - Parameter soundID: SystemSoundID.
     /// - Returns: Returns true if has been disposed, otherwise false.
-     static func disposeSound(soundID: SystemSoundID) throws {
+    public static func disposeSound(soundID: SystemSoundID) throws {
         let error: OSStatus = AudioServicesDisposeSystemSoundID(soundID)
         if error != Int32(kAudioServicesNoError) {
             throw SFKitError.errorLoadingSound

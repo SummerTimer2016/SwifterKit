@@ -29,7 +29,7 @@ import Foundation
 // MARK: - FileManager extension
 
 /// This extension adds some useful functions to FileManager.
- extension FileManager {
+public extension FileManager {
     // MARK: - Variables
     
     /// Path type enum.

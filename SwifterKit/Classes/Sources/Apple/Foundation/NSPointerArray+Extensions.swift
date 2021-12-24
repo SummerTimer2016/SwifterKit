@@ -30,7 +30,7 @@ import Foundation
 
 /// This extension adds some useful functions to NSPointerArray.
 /// https://marcosantadev.com/swift-arrays-holding-elements-weak-references/
- extension NSPointerArray {
+public extension NSPointerArray {
     /// Adds an object to the array.
     ///
     /// - Parameter object: Object to be added.

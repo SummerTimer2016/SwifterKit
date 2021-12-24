@@ -30,7 +30,7 @@ import UIKit
 // MARK: - UILabel extension
 
 /// This extesion adds some useful functions to UILabel.
- extension UILabel {
+public extension UILabel {
     // MARK: - Functions
     
     /// Create an UILabel with the given parameters.

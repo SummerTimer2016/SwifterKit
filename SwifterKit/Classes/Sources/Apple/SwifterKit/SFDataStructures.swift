@@ -29,16 +29,16 @@ import Foundation
 // MARK: - List struct
 
 /// Primitive List implementation.
- struct List<Element: Equatable>: CustomStringConvertible {
+public struct List<Element: Equatable>: CustomStringConvertible {
     // MARK: - Variables
     
     /// Count of the elements in list.
-     var count: Int {
+    public var count: Int {
         list.count
     }
     
     /// Describe the List.
-     var description: String {
+    public var description: String {
         "\(list)"
     }
     
@@ -50,7 +50,7 @@ import Foundation
     /// Delete an element at the given index.
     ///
     /// - Parameter index: The index to delete.
-     mutating func delete(at index: Int) {
+    public mutating func delete(at index: Int) {
         list.remove(at: index)
     }
     
@@ -58,7 +58,7 @@ import Foundation
     ///
     /// - Parameter element: The object to be deleted.
     /// - Returns: Retruns true if removed, otherwise false.
-     mutating func delete(_ element: Element) -> Bool {
+    public mutating func delete(_ element: Element) -> Bool {
         let firstElement = search(element)
             
         guard firstElement > -1 else {
@@ -72,7 +72,7 @@ import Foundation
     /// Insert an element in the List.
     ///
     /// - Parameter element: The element to insert in the List.
-     mutating func insert(_ element: Element) {
+    public mutating func insert(_ element: Element) {
         list.append(element)
     }
     
@@ -80,7 +80,7 @@ import Foundation
     ///
     /// - Parameter index: The index.
     /// - Returns: Returns the element of the searched index.
-     func search(at index: Int) -> Element? {
+    public func search(at index: Int) -> Element? {
         list.safeObject(at: index)
     }
     
@@ -88,7 +88,7 @@ import Foundation
     ///
     /// - Parameter element: The element to search.
     /// - Returns: Returns the index of the searched element.
-     func search(_ element: Element) -> Int {
+    public func search(_ element: Element) -> Int {
         for index in 0 ..< list.count where list[index] == element {
             return index
         }
@@ -100,16 +100,16 @@ import Foundation
 // MARK: - Queue struct
 
 /// Primitive Queue implementation.
- struct Queue<Element: Equatable>: CustomStringConvertible {
+public struct Queue<Element: Equatable>: CustomStringConvertible {
     // MARK: - Variables
     
     /// Count of the elements in list.
-     var count: Int {
+    public var count: Int {
         queue.count
     }
     
     /// Describe the Queue.
-     var description: String {
+    public var description: String {
         "\(queue)"
     }
     
@@ -121,7 +121,7 @@ import Foundation
     /// Dequeue the first element.
     ///
     /// - Returns: Retruns true if removed, otherwise false.
-     mutating func dequeue() -> Bool {
+    public mutating func dequeue() -> Bool {
         if !queue.isEmpty {
             queue.remove(at: 0)
             return true
@@ -131,21 +131,21 @@ import Foundation
     }
     
     /// Remove all the elements in the Queue.
-     mutating func empty() {
+    public mutating func empty() {
         queue.removeAll(keepingCapacity: false)
     }
     
     /// Adds an element to the Queue.
     ///
     /// - Parameter element: The element to add.
-     mutating func enqueue(_ element: Element) {
+    public mutating func enqueue(_ element: Element) {
         queue.append(element)
     }
     
     /// Returns the Queue top element.
     ///
     /// - Returns: Returns the Queue top element.
-     func top() -> Element? {
+    public func top() -> Element? {
         queue.first
     }
 }
@@ -153,16 +153,16 @@ import Foundation
 // MARK: - Stack struct
 
 /// Primitive Stack implementation.
- struct Stack<Element: Equatable>: CustomStringConvertible {
+public struct Stack<Element: Equatable>: CustomStringConvertible {
     // MARK: - Variables
     
     /// Count of the elements in list.
-     var count: Int {
+    public var count: Int {
         stack.count
     }
     
     /// Describe the Stack.
-     var description: String {
+    public var description: String {
         "\(stack)"
     }
     
@@ -174,14 +174,14 @@ import Foundation
     /// Returns if the Stack is empty or not.
     ///
     /// - Returns: Returns true if the Stack is empty, otherwise false.
-     func empty() -> Bool {
+    public func empty() -> Bool {
         stack.isEmpty
     }
     
     /// Removes an element on top of the Stack.
     ///
     /// - Returns: Returns the removed element.
-     mutating func pop() -> Element? {
+    public mutating func pop() -> Element? {
         var element: Element?
         if !empty() {
             element = stack[stack.count - 1]
@@ -194,7 +194,7 @@ import Foundation
     /// Adds an element on top of the Stack.
     ///
     /// - Parameter element: The element to add.
-     mutating func push(_ element: Element) {
+    public mutating func push(_ element: Element) {
         stack.append(element)
     }
 }

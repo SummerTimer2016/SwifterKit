@@ -5,7 +5,7 @@ import CoreLocation
 
 // MARK: - Properties
 
- extension CLVisit {
+public extension CLVisit {
     /// SwifterSwift: Retrieves a visit's location.
     ///
     /// - Returns: CLLocation.

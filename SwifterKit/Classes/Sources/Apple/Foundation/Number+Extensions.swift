@@ -33,7 +33,7 @@ import Foundation
 ///
 /// - Parameter degrees: Degrees to be converted.
 /// - Returns: Returns the convertion result.
- func degreesToRadians(_ degrees: Double) -> Double {
+public func degreesToRadians(_ degrees: Double) -> Double {
     degrees * Double.pi / 180
 }
 
@@ -41,14 +41,14 @@ import Foundation
 ///
 /// - Parameter radians: Radians to be converted.
 /// - Returns: Returns the convertion result.
- func radiansToDegrees(_ radians: Double) -> Double {
+public func radiansToDegrees(_ radians: Double) -> Double {
     radians * 180 / Double.pi
 }
 
 // MARK: - Extensions
 
 /// This extesion adds some useful functions to Double.
- extension Double {
+public extension Double {
     /// Gets the individual numbers, and puts them into an array. All negative numbers will start with 0.
     var array: [Int] {
         description.map { Int(String($0)) ?? 0 }
@@ -56,7 +56,7 @@ import Foundation
 }
 
 /// This extesion adds some useful functions to Float.
- extension Float {
+public extension Float {
     /// Gets the individual numbers, and puts them into an array. All negative numbers will start with 0.
     var array: [Int] {
         description.map { Int(String($0)) ?? 0 }
@@ -64,7 +64,7 @@ import Foundation
 }
 
 /// This extesion adds some useful functions to Int.
- extension Int {
+public extension Int {
     /// Gets the individual numbers, and puts them into an array. All negative numbers will start with 0.
     var array: [Int] {
         description.map { Int(String($0)) ?? 0 }
@@ -84,7 +84,7 @@ infix operator <=>: ComparisonPrecedence
 ///   - left: Left number to be compared.
 ///   - right: Right tuple to be compared (Number, Number).
 /// - Returns: Returns true if `left` it is in `right` range but not equal.
- func <> <T: Comparable>(left: T, right: (T, T)) -> Bool {
+public func <> <T: Comparable>(left: T, right: (T, T)) -> Bool {
     left > right.0 && left < right.1
 }
 
@@ -94,6 +94,6 @@ infix operator <=>: ComparisonPrecedence
 ///   - left: Left number to be compared.
 ///   - right: Right tuple to be compared (Number, Number).
 /// - Returns: Returns true if `left` it is in `right` range or equal.
- func <=> <T: Comparable>(left: T, right: (T, T)) -> Bool {
+public func <=> <T: Comparable>(left: T, right: (T, T)) -> Bool {
     left >= right.0 && left <= right.1
 }

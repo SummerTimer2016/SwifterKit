@@ -31,7 +31,7 @@ import UIKit
 
 // MARK: - Properties
 
- extension UIFont {
+public extension UIFont {
     /// SwifterSwift: Font as bold font.
     var bold: UIFont {
         return UIFont(descriptor: fontDescriptor.withSymbolicTraits(.traitBold)!, size: 0)
@@ -58,7 +58,7 @@ import UIKit
     }
 }
 // MARK: - function
- extension UIFont {
+public extension UIFont {
     /// Calculate text height for max width and font.
     ///
     /// - Parameters:

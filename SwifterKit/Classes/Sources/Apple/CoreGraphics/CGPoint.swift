@@ -1,5 +1,5 @@
 //
-//  BFKit.swift
+//  CGPoint.swift
 //  BFKit-Swift
 //
 //  The MIT License (MIT)
@@ -24,40 +24,20 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
+import CoreGraphics
 import Foundation
-#if canImport(UIKit)
-    import UIKit
-#elseif canImport(AppKit)
-    import AppKit
-#endif
 
-/// BFKit version string.
-public let SFKitVersion = "1.0.0"
+// MARK: - CGPoint extension
 
-/// BFKit author string.
-public let SFKitAuthor = "Fabrizio Brancati And Summer"
-
-#if canImport(UIKit)
-    /// Font typealias.
-    public typealias Font = UIFont
-    /// Color typealias.
-    public typealias Color = UIColor
-#elseif canImport(AppKit)
-    /// Font typealias.
-    public typealias Font = NSFont
-    /// Color typealias.
-    public typealias Color = NSColor
-#endif
-
-/// BFKit errors enum.
-///
-/// - jsonSerialization: JSONSerialization error.
-/// - errorLoadingSound: Could not load sound error.
-/// - pathNotExist: Path not exist error.
-/// - pathNotAllowed: Path not allowed error.
-public enum SFKitError: Error {
-    case jsonSerialization
-    case errorLoadingSound
-    case pathNotExist
-    case pathNotAllowed
+/// This extesion adds some useful functions to CGPoint.
+public extension CGPoint {
+    // MARK: - Functions
+    
+    /// Returns the distance between another CGPoint.
+    ///
+    /// - Parameter point: CGPoint to be used to calculate the distance.
+    /// - Returns: Returns the distance between another CGPoint.
+    func distanceTo(_ point: CGPoint) -> CGFloat {
+        sqrt(pow((point.x - self.x), 2) + pow((point.y - self.y), 2))
+    }
 }

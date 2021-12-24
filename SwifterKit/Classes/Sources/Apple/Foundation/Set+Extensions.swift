@@ -29,7 +29,7 @@ import Foundation
 // MARK: - Set extension
 
 /// This extension adds some useful functions to Set.
- extension Set {
+public extension Set {
     /// Randomly selects an element from self and returns it.
     ///
     /// - returns: An element that was randomly selected from the set.

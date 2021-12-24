@@ -46,7 +46,7 @@ import UIKit
 ///         showError()
 ///     }
 ///
- enum Device {
+public enum Device {
   #if os(iOS)
     /// Device is an [iPod Touch (5th generation)](https://support.apple.com/kb/SP657)
     ///
@@ -263,12 +263,12 @@ import UIKit
   case unknown(String)
 
   /// Initializes a `Device` representing the current device this software runs on.
-   init() {
+  public init() {
     self = Device.instance
   }
 
   /// Gets the identifier from the system, such as "iPhone7,1".
-   static var identifier: String = {
+  public static var identifier: String = {
     var systemInfo = utsname()
     uname(&systemInfo)
     let mirror = Mirror(reflecting: systemInfo.machine)
@@ -287,7 +287,7 @@ import UIKit
   /// - parameter identifier: The device identifier, e.g. "iPhone7,1". Can be obtained from `Device.identifier`.
   ///
   /// - returns: An initialized `Device`.
-   static func mapToDevice(identifier: String) -> Device { // swiftlint:disable:this cyclomatic_complexity
+  public static func mapToDevice(identifier: String) -> Device { // swiftlint:disable:this cyclomatic_complexity
     #if os(iOS)
       switch identifier {
       case "iPod5,1": return iPodTouch5
@@ -364,7 +364,7 @@ import UIKit
   ///
   /// - returns: the underlying device If the `device` is a `simulator`,
   /// otherwise return the `device`.
-   static func realDevice(from device: Device) -> Device {
+  public static func realDevice(from device: Device) -> Device {
     if case let .simulator(model) = device {
       return model
     }
@@ -373,7 +373,7 @@ import UIKit
 
   #if os(iOS) || os(watchOS)
   /// Returns diagonal screen length in inches
-   var diagonal: Double {
+  public var diagonal: Double {
     #if os(iOS)
       switch self {
         case .iPodTouch5: return 4
@@ -437,7 +437,7 @@ import UIKit
   #endif
 
   /// Returns screen ratio as a tuple
-   var screenRatio: (width: Double, height: Double) {
+  public var screenRatio: (width: Double, height: Double) {
     #if os(iOS)
       switch self {
       case .iPodTouch5: return (width: 9, height: 16)
@@ -503,89 +503,89 @@ import UIKit
 
   #if os(iOS)
     /// All iPods
-     static var allPods: [Device] {
+    public static var allPods: [Device] {
       return [.iPodTouch5, .iPodTouch6]
     }
 
     /// All iPhones
-     static var allPhones: [Device] {
+    public static var allPhones: [Device] {
       return [.iPhone4, .iPhone4s, .iPhone5, .iPhone5c, .iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPhoneX, .iPhoneXs, .iPhoneXsMax, .iPhoneXr]
     }
 
     /// All iPads
-     static var allPads: [Device] {
+    public static var allPads: [Device] {
       return [.iPad2, .iPad3, .iPad4, .iPadAir, .iPadAir2, .iPad5, .iPad6, .iPadMini, .iPadMini2, .iPadMini3, .iPadMini4, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
     }
 
     /// All X-Series Devices
-     static var allXSeriesDevices: [Device] {
+    public static var allXSeriesDevices: [Device] {
       return [.iPhoneX, .iPhoneXs, .iPhoneXsMax, .iPhoneXr]
     }
 
     /// All Plus-Sized Devices
-     static var allPlusSizedDevices: [Device] {
+    public static var allPlusSizedDevices: [Device] {
       return [.iPhone6Plus, .iPhone6sPlus, .iPhone7Plus, .iPhone8Plus]
     }
 
     /// All Pro Devices
-     static var allProDevices: [Device] {
+    public static var allProDevices: [Device] {
       return [.iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch, .iPadPro11Inch, .iPadPro12Inch3]
     }
 
     /// All mini Devices
-     static var allMiniDevices: [Device] {
+    public static var allMiniDevices: [Device] {
       return [.iPadMini, .iPadMini2, .iPadMini3, .iPadMini4]
     }
 
     /// All simulator iPods
-     static var allSimulatorPods: [Device] {
+    public static var allSimulatorPods: [Device] {
       return allPods.map(Device.simulator)
     }
 
     /// All simulator iPhones
-     static var allSimulatorPhones: [Device] {
+    public static var allSimulatorPhones: [Device] {
       return allPhones.map(Device.simulator)
     }
 
     /// All simulator iPads
-     static var allSimulatorPads: [Device] {
+    public static var allSimulatorPads: [Device] {
       return allPads.map(Device.simulator)
     }
 
     /// All simulator iPad mini
-     static var allSimulatorMiniDevices: [Device] {
+    public static var allSimulatorMiniDevices: [Device] {
       return allMiniDevices.map(Device.simulator)
     }
 
     /// All simulator Plus-Sized Devices
-     static var allSimulatorXSeriesDevices: [Device] {
+    public static var allSimulatorXSeriesDevices: [Device] {
       return allXSeriesDevices.map(Device.simulator)
     }
 
     /// All simulator Plus-Sized Devices
-     static var allSimulatorPlusSizedDevices: [Device] {
+    public static var allSimulatorPlusSizedDevices: [Device] {
       return allPlusSizedDevices.map(Device.simulator)
     }
 
     /// All simulator Pro Devices
-     static var allSimulatorProDevices: [Device] {
+    public static var allSimulatorProDevices: [Device] {
       return allProDevices.map(Device.simulator)
     }
 
     /// Returns whether the device is an iPod (real or simulator)
-     var isPod: Bool {
+    public var isPod: Bool {
       return isOneOf(Device.allPods) || isOneOf(Device.allSimulatorPods)
     }
 
     /// Returns whether the device is an iPhone (real or simulator)
-     var isPhone: Bool {
+    public var isPhone: Bool {
       return (isOneOf(Device.allPhones)
               || isOneOf(Device.allSimulatorPhones)
               || UIDevice.current.userInterfaceIdiom == .phone) && !isPod
     }
 
     /// Returns whether the device is an iPad (real or simulator)
-     var isPad: Bool {
+    public var isPad: Bool {
       return isOneOf(Device.allPads)
               || isOneOf(Device.allSimulatorPads)
               || UIDevice.current.userInterfaceIdiom == .pad
@@ -593,17 +593,17 @@ import UIKit
 
     /// Returns whether the device is any of the simulator
     /// Useful when there is a need to check and skip running a portion of code (location request or others)
-     var isSimulator: Bool {
+    public var isSimulator: Bool {
       return isOneOf(Device.allSimulators)
     }
 
     /// If this device is a simulator return the underlying device,
     /// otherwise return `self`.
-     var realDevice: Device {
+    public var realDevice: Device {
       return Device.realDevice(from: self)
     }
 
-     var isZoomed: Bool {
+    public var isZoomed: Bool {
       // TODO: Longterm we need a better solution for this!
       guard self != .iPhoneX && self != .iPhoneXs else { return false }
       if Int(UIScreen.main.scale.rounded()) == 3 {
@@ -615,64 +615,64 @@ import UIKit
     }
 
     /// All Touch ID Capable Devices
-     static var allTouchIDCapableDevices: [Device] {
+    public static var allTouchIDCapableDevices: [Device] {
       return [.iPhone5s, .iPhone6, .iPhone6Plus, .iPhone6s, .iPhone6sPlus, .iPhone7, .iPhone7Plus, .iPhoneSE, .iPhone8, .iPhone8Plus, .iPadAir2, .iPad5, .iPad6, .iPadMini3, .iPadMini4, .iPadPro9Inch, .iPadPro12Inch, .iPadPro12Inch2, .iPadPro10Inch]
     }
 
     /// All Face ID Capable Devices
-     static var allFaceIDCapableDevices: [Device] {
+    public static var allFaceIDCapableDevices: [Device] {
       return [.iPhoneX, .iPhoneXs, .iPhoneXsMax, .iPhoneXr, .iPadPro11Inch, .iPadPro12Inch3]
     }
 
     /// Returns whether or not the device has Touch ID
-     var isTouchIDCapable: Bool {
+    public var isTouchIDCapable: Bool {
       return isOneOf(Device.allTouchIDCapableDevices)
     }
 
     /// Returns whether or not the device has Face ID
-     var isFaceIDCapable: Bool {
+    public var isFaceIDCapable: Bool {
       return isOneOf(Device.allFaceIDCapableDevices)
     }
 
     /// Returns whether or not the device has any biometric sensor (i.e. Touch ID or Face ID)
-     var hasBiometricSensor: Bool {
+    public var hasBiometricSensor: Bool {
       return isTouchIDCapable || isFaceIDCapable
     }
   
     /// All devices that feature a sensor housing in the screen
-     static var allDevicesWithSensorHousing: [Device] {
+    public static var allDevicesWithSensorHousing: [Device] {
       return [.iPhoneX, .iPhoneXs, .iPhoneXsMax, .iPhoneXr]
     }
   
     /// Returns whether or not the device has a sensor housing
-     var hasSensorHousing: Bool {
+    public var hasSensorHousing: Bool {
       return isOneOf(Device.allDevicesWithSensorHousing)
     }
 
   #elseif os(tvOS)
     /// All TVs
-     static var allTVs: [Device] {
+    public static var allTVs: [Device] {
        return [.appleTV4, .appleTV4K]
     }
 
     /// All simulator TVs
-     static var allSimulatorTVs: [Device] {
+    public static var allSimulatorTVs: [Device] {
       return allTVs.map(Device.simulator)
     }
   #elseif os(watchOS)
     /// All Watches
-     static var allWatches: [Device] {
+    public static var allWatches: [Device] {
        return [.appleWatchSeries0_38mm, .appleWatchSeries0_42mm, .appleWatchSeries1_38mm, .appleWatchSeries1_42mm, .appleWatchSeries2_38mm, .appleWatchSeries2_42mm, .appleWatchSeries3_38mm, .appleWatchSeries3_42mm, .appleWatchSeries4_40mm, .appleWatchSeries4_44mm]
     }
 
     /// All simulator Watches
-     static var allSimulatorWatches: [Device] {
+    public static var allSimulatorWatches: [Device] {
       return allWatches.map(Device.simulator)
     }
   #endif
 
   /// All real devices (i.e. all devices except for all simulators)
-   static var allRealDevices: [Device] {
+  public static var allRealDevices: [Device] {
     #if os(iOS)
       return allPods + allPhones + allPads
     #elseif os(tvOS)
@@ -683,7 +683,7 @@ import UIKit
   }
 
   /// All simulators
-   static var allSimulators: [Device] {
+  public static var allSimulators: [Device] {
     return allRealDevices.map(Device.simulator)
   }
 
@@ -716,12 +716,12 @@ import UIKit
 
    - returns: Returns whether the current device is one of the passed in ones.
    */
-   func isOneOf(_ devices: [Device]) -> Bool {
+  public func isOneOf(_ devices: [Device]) -> Bool {
     return devices.contains(self)
   }
 
   /// The name identifying the device (e.g. "Dennis' iPhone").
-   var name: String {
+  public var name: String {
     #if os(watchOS)
     return WKInterfaceDevice.current().name
     #else
@@ -730,7 +730,7 @@ import UIKit
   }
 
   /// The name of the operating system running on the device represented by the receiver (e.g. "iOS" or "tvOS").
-   var systemName: String {
+  public var systemName: String {
     #if os(watchOS)
     return WKInterfaceDevice.current().systemName
     #else
@@ -739,7 +739,7 @@ import UIKit
   }
 
   /// The current version of the operating system (e.g. 8.4 or 9.2).
-   var systemVersion: String {
+  public var systemVersion: String {
     #if os(watchOS)
     return WKInterfaceDevice.current().systemVersion
     #else
@@ -748,7 +748,7 @@ import UIKit
   }
 
   /// The model of the device (e.g. "iPhone" or "iPod Touch").
-   var model: String {
+  public var model: String {
     #if os(watchOS)
     return WKInterfaceDevice.current().model
     #else
@@ -757,7 +757,7 @@ import UIKit
   }
 
   /// The model of the device as a localized string.
-   var localizedModel: String {
+  public var localizedModel: String {
     #if os(watchOS)
     return WKInterfaceDevice.current().localizedModel
     #else
@@ -766,7 +766,7 @@ import UIKit
   }
 
   /// PPI (Pixels per Inch) on the current device's screen (if applicable). When the device is not applicable this property returns nil.
-   var ppi: Int? {
+  public var ppi: Int? {
     #if os(iOS)
     switch self {
       case .iPodTouch5: return 326
@@ -831,7 +831,7 @@ import UIKit
   }
 
   /// True when a Guided Access session is currently active; otherwise, false.
-   var isGuidedAccessSessionActive: Bool {
+  public var isGuidedAccessSessionActive: Bool {
     #if os(iOS)
       #if swift(>=4.2)
         return UIAccessibility.isGuidedAccessEnabled
@@ -844,7 +844,7 @@ import UIKit
   }
 
   /// The brightness level of the screen.
-   var screenBrightness: Int {
+  public var screenBrightness: Int {
     #if os(iOS)
     return Int(UIScreen.main.brightness * 100)
     #else
@@ -857,7 +857,7 @@ import UIKit
 extension Device: CustomStringConvertible {
 
   /// A textual representation of the device.
-   var description: String {
+  public var description: String {
     #if os(iOS)
       switch self {
       case .iPodTouch5: return "iPod Touch 5"
@@ -936,7 +936,7 @@ extension Device: Equatable {
   /// - parameter rhs: Another device.
   ///
   /// - returns: `true` iff the underlying identifier is the same.
-   static func == (lhs: Device, rhs: Device) -> Bool {
+  public static func == (lhs: Device, rhs: Device) -> Bool {
     return lhs.description == rhs.description
   }
 
@@ -953,7 +953,7 @@ extension Device {
    - Charging:  The device is plugged into power and the battery is less than 100% charged.
    - Unplugged: The device is not plugged into power; the battery is discharging.
    */
-   enum BatteryState: CustomStringConvertible, Equatable {
+  public enum BatteryState: CustomStringConvertible, Equatable {
     /// The device is plugged into power and the battery is 100% charged or the device is the iOS Simulator.
     case full
     /// The device is plugged into power and the battery is less than 100% charged.
@@ -994,7 +994,7 @@ extension Device {
     #endif
 
     /// The user enabled Low Power mode
-     var lowPowerMode: Bool {
+    public var lowPowerMode: Bool {
       if #available(iOS 9.0, *) {
         return ProcessInfo.processInfo.isLowPowerModeEnabled
       } else {
@@ -1009,7 +1009,7 @@ extension Device {
     /// Battery level: 100 % (Full), device is plugged in.
     /// Battery level: \(batteryLevel)%, device is unplugged.
     /// ```
-     var description: String {
+    public var description: String {
       switch self {
       case .charging(let batteryLevel): return "Battery level: \(batteryLevel)%, device is plugged in."
       case .full: return "Battery level: 100 % (Full), device is plugged in."
@@ -1020,12 +1020,12 @@ extension Device {
   }
 
   /// The state of the battery
-   var batteryState: BatteryState {
+  public var batteryState: BatteryState {
     return BatteryState()
   }
 
   /// Battery level ranges from 0 (fully discharged) to 100 (100% charged).
-   var batteryLevel: Int {
+  public var batteryLevel: Int {
     switch BatteryState() {
     case .charging(let value): return value
     case .full: return 100
@@ -1046,7 +1046,7 @@ extension Device.BatteryState: Comparable {
   /// - parameter rhs: Another battery state.
   ///
   /// - returns: `true` iff they are equal, otherwise `false`
-   static func == (lhs: Device.BatteryState, rhs: Device.BatteryState) -> Bool {
+  public static func == (lhs: Device.BatteryState, rhs: Device.BatteryState) -> Bool {
     return lhs.description == rhs.description
   }
 
@@ -1056,7 +1056,7 @@ extension Device.BatteryState: Comparable {
   /// - parameter rhs: Another battery state.
   ///
   /// - returns: `true` if rhs is `.Full`, `false` when lhs is `.Full` otherwise their battery level is compared.
-   static func < (lhs: Device.BatteryState, rhs: Device.BatteryState) -> Bool {
+  public static func < (lhs: Device.BatteryState, rhs: Device.BatteryState) -> Bool {
     switch (lhs, rhs) {
     case (.full, _): return false // return false (even if both are `.Full` -> they are equal)
     case (_, .full): return true // lhs is *not* `.Full`, rhs is
@@ -1078,12 +1078,12 @@ extension Device {
       - Landscape: The device is in Landscape Orientation
       - Portrait:  The device is in Portrait Orientation
     */
-     enum Orientation {
+    public enum Orientation {
       case landscape
       case portrait
     }
 
-     var orientation: Orientation {
+    public var orientation: Orientation {
       if UIDevice.current.orientation.isLandscape {
         return .landscape
       } else {
@@ -1103,30 +1103,30 @@ extension Device {
   private static let rootURL = URL(fileURLWithPath: "/")
 
   /// The volume’s total capacity in bytes.
-   static var volumeTotalCapacity: Int? {
+  public static var volumeTotalCapacity: Int? {
     return (try? Device.rootURL.resourceValues(forKeys: [.volumeTotalCapacityKey]))?.volumeTotalCapacity
   }
 
   /// The volume’s available capacity in bytes.
-   static var volumeAvailableCapacity: Int? {
+  public static var volumeAvailableCapacity: Int? {
     return (try? rootURL.resourceValues(forKeys: [.volumeAvailableCapacityKey]))?.volumeAvailableCapacity
   }
 
   /// The volume’s available capacity in bytes for storing important resources.
   @available(iOS 11.0, *)
-   static var volumeAvailableCapacityForImportantUsage: Int64? {
+  public static var volumeAvailableCapacityForImportantUsage: Int64? {
     return (try? rootURL.resourceValues(forKeys: [.volumeAvailableCapacityForImportantUsageKey]))?.volumeAvailableCapacityForImportantUsage
   }
 
   /// The volume’s available capacity in bytes for storing nonessential resources.
   @available(iOS 11.0, *)
-   static var volumeAvailableCapacityForOpportunisticUsage: Int64? { //swiftlint:disable:this identifier_name
+  public static var volumeAvailableCapacityForOpportunisticUsage: Int64? { //swiftlint:disable:this identifier_name
     return (try? rootURL.resourceValues(forKeys: [.volumeAvailableCapacityForOpportunisticUsageKey]))?.volumeAvailableCapacityForOpportunisticUsage
   }
 
   /// All volumes capacity information in bytes.
   @available(iOS 11.0, *)
-   static var volumes: [URLResourceKey: Int64]? {
+  public static var volumes: [URLResourceKey: Int64]? {
     do {
       let values = try rootURL.resourceValues(forKeys: [.volumeAvailableCapacityForImportantUsageKey,
                                                         .volumeAvailableCapacityKey,

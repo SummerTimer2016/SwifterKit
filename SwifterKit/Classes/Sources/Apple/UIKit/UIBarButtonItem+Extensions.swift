@@ -34,7 +34,7 @@ import UIKit
 
 // MARK: - Properties
 
- extension UIBarButtonItem {
+public extension UIBarButtonItem {
     /// SwifterSwift: Creates a flexible space UIBarButtonItem.
     static var flexibleSpace: UIBarButtonItem {
         return UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: nil, action: nil)
@@ -43,7 +43,7 @@ import UIKit
 
 // MARK: - Methods
 
- extension UIBarButtonItem {
+public extension UIBarButtonItem {
     // MARK: - Functions
 
     /// Create an UIBarButtonItem with type setted to FlexibleSpace or FixedSpace.

@@ -24,13 +24,15 @@
 //  OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 //  SOFTWARE.
 
-
-#if canImport(UIKit) && !os(watchOS)
+import CoreGraphics
+import Foundation
+import QuartzCore
 import UIKit
 
 // MARK: - UIView extension
-// MARK: - Enum
- extension UIView {
+
+/// This extesion adds some useful functions to UIView.
+public extension UIView {
     // MARK: - Variables
     
     /// Direction of flip animation.
@@ -78,10 +80,8 @@ import UIKit
         /// Radial gradient.
         case radial
     }
-}
-/// This extesion adds some useful functions to UIView
-// MARK: - Functions
- extension UIView {
+    
+    // MARK: - Functions
     
     /// Create an UIView with the given frame and background color.
     ///
@@ -92,8 +92,6 @@ import UIKit
         self.init(frame: frame)
         self.backgroundColor = backgroundColor
     }
-    
-    
     
     /// Creates a border around the UIView.
     ///
@@ -421,34 +419,12 @@ import UIKit
         return nil
     }
     
-    /// SwifterSwift: Load view from nib.
-    ///
-    /// - Parameters:
-    ///   - name: nib name.
-    ///   - bundle: bundle of nib (default is nil).
-    /// - Returns: optional UIView (if applicable).
-    class func loadFromNib(named name: String, bundle: Bundle? = nil) -> UIView? {
-        return UINib(nibName: name, bundle: bundle).instantiate(withOwner: nil, options: nil)[0] as? UIView
-    }
-    
-    /// SwifterSwift: Load view of a certain type from nib
-    ///
-    /// - Parameters:
-    ///   - withClass: UIView type.
-    ///   - bundle: bundle of nib (default is nil).
-    /// - Returns: UIView
-    class func loadFromNib<T: UIView>(withClass name: T.Type, bundle: Bundle? = nil) -> T {
-        let named = String(describing: name)
-        guard let view = UINib(nibName: named, bundle: bundle).instantiate(withOwner: nil, options: nil)[0] as? T else {
-            fatalError("First element in xib file \(named) is not of type \(named)")
-        }
-        return view
-    }
-    
 }
+
 // MARK: - UIView animatable extension
+
 /// Extends UIView with animatable functions.
- extension UIView {
+public extension UIView {
     /// Create a shake effect.
     ///
     /// - Parameters:
@@ -605,7 +581,7 @@ extension UIView {
     // MARK: - Variables
     
     /// Inspectable border size.
-    @IBInspectable  var layerBorderWidth: CGFloat {
+    @IBInspectable public var borderWidth: CGFloat {
         get {
             layer.borderWidth
         }
@@ -615,7 +591,7 @@ extension UIView {
     }
     
     /// Inspectable border color.
-    @IBInspectable  var layerBorderColor: UIColor {
+    @IBInspectable public var borderColor: UIColor {
         get {
             guard let borderColor = layer.borderColor else {
                 return UIColor.clear
@@ -633,7 +609,7 @@ extension UIView {
     /// Set it to true if you want to enable corner radius.
     ///
     /// Set it to false if you want to enable shadow.
-    @IBInspectable  var maskToBounds: Bool {
+    @IBInspectable public var maskToBounds: Bool {
         get {
             layer.masksToBounds
         }
@@ -645,7 +621,7 @@ extension UIView {
     /// Inspectable corners size.
     ///
     /// Remeber to set maskToBounds to true.
-    @IBInspectable  var layerCornerRadius: CGFloat {
+    @IBInspectable public var cornerRadius: CGFloat {
         get {
             layer.cornerRadius
         }
@@ -657,7 +633,7 @@ extension UIView {
     /// Inspectable shadow color.
     ///
     /// Remeber to set maskToBounds to false.
-    @IBInspectable  var layerShadowColor: UIColor {
+    @IBInspectable public var shadowColor: UIColor {
         get {
             guard let shadowColor = layer.shadowColor else {
                 return UIColor.clear
@@ -673,7 +649,7 @@ extension UIView {
     /// Inspectable shadow opacity.
     ///
     /// Remeber to set maskToBounds to false.
-    @IBInspectable  var layerShadowOpacity: Float {
+    @IBInspectable public var shadowOpacity: Float {
         get {
             layer.shadowOpacity
         }
@@ -685,7 +661,7 @@ extension UIView {
     /// Inspectable shadow offset X.
     ///
     /// Remeber to set maskToBounds to false.
-    @IBInspectable  var layerShadowOffsetX: CGFloat {
+    @IBInspectable public var shadowOffsetX: CGFloat {
         get {
             layer.shadowOffset.width
         }
@@ -697,7 +673,7 @@ extension UIView {
     /// Inspectable shadow offset Y.
     ///
     /// Remeber to set maskToBounds to false.
-    @IBInspectable  var layerShadowOffsetY: CGFloat {
+    @IBInspectable public var shadowOffsetY: CGFloat {
         get {
             layer.shadowOffset.height
         }
@@ -709,7 +685,7 @@ extension UIView {
     /// Inspectable shadow radius.
     ///
     /// Remeber to set maskToBounds to false.
-    @IBInspectable  var layerShadowRadius: CGFloat {
+    @IBInspectable public var shadowRadius: CGFloat {
         get {
             layer.shadowRadius
         }
@@ -717,16 +693,4 @@ extension UIView {
             layer.shadowRadius = newValue
         }
     }
-    /// SwifterSwift: Get view's parent view controller
-    var parentViewController: UIViewController? {
-        weak var parentResponder: UIResponder? = self
-        while parentResponder != nil {
-            parentResponder = parentResponder!.next
-            if let viewController = parentResponder as? UIViewController {
-                return viewController
-            }
-        }
-        return nil
-    }
 }
-#endif

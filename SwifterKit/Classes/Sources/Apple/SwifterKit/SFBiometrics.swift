@@ -30,11 +30,11 @@ import LocalAuthentication
 // MARK: - BFBiometrics struct
 
 /// This struct adds some useful functions to use biometric authentications.
- enum SFBiometrics {
+public enum SFBiometrics {
     // MARK: - Variables
     
     /// Biometric result enum.
-     enum Result: String {
+    public enum Result: String {
         /// Success.
         case success
         /// Authentication Failed.
@@ -68,7 +68,7 @@ import LocalAuthentication
     /// Returns if the Biometrics authentication can be used.
     ///
     /// - Returns: Returns an error code as Result enum.
-     static func canUseBiometric() -> Result {
+    public static func canUseBiometric() -> Result {
         let context = LAContext()
         var error: NSError?
         
@@ -86,7 +86,7 @@ import LocalAuthentication
     ///   - fallbackTitle: Default title "Enter Password" is used when this property is left nil. If set to empty string, the button will be hidden.
     ///   - completion:    Completion handler.
     ///   - result:        Returns the Biometrics result, from the Result enum.
-     static func useBiometric(localizedReason: String, fallbackTitle: String? = nil, completion: @escaping (_ result: Result) -> Void) {
+    public static func useBiometric(localizedReason: String, fallbackTitle: String? = nil, completion: @escaping (_ result: Result) -> Void) {
         let context = LAContext()
         
         context.localizedFallbackTitle = fallbackTitle

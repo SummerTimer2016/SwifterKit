@@ -41,7 +41,7 @@ import Foundation
 ///   - blue: Blue value.
 ///   - alpha: Alpha value.
 /// - Returns: Returns the created UIColor or NSColor.
- func RGBA(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Float) -> Color {
+public func RGBA(_ red: Int, _ green: Int, _ blue: Int, _ alpha: Float) -> Color {
     #if canImport(UIKit)
         return Color(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: CGFloat(alpha))
     #elseif canImport(AppKit)
@@ -57,7 +57,7 @@ import Foundation
 ///   - green: Green value.
 ///   - blue: Blue value.
 /// - Returns: Returns the created UIColor or NSColor.
- func ARGB( _ alpha: Float, _ red: Int, _ green: Int, _ blue: Int) -> Color {
+public func ARGB( _ alpha: Float, _ red: Int, _ green: Int, _ blue: Int) -> Color {
     RGBA(red, green, blue, alpha)
 }
 
@@ -68,7 +68,7 @@ import Foundation
 ///   - green: Green value.
 ///   - blue: Blue value.
 /// - Returns: Returns the created UIColor or NSColor.
- func RGB(_ red: Int, _ green: Int, _ blue: Int) -> Color {
+public func RGB(_ red: Int, _ green: Int, _ blue: Int) -> Color {
     #if canImport(UIKit)
         return Color(red: CGFloat(red) / 255.0, green: CGFloat(green) / 255.0, blue: CGFloat(blue) / 255.0, alpha: 1.0)
     #elseif canImport(AppKit)
@@ -79,7 +79,7 @@ import Foundation
 // MARK: - UIColor or NSColor extension
 
 /// This extesion adds some useful functions to UIColor or NSColor.
- extension Color {
+public extension Color {
     // MARK: - Variables
 
     #if canImport(UIKit)

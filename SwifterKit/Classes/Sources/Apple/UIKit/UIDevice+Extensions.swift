@@ -40,7 +40,7 @@ internal let BFDeviceIdentifierDefaultsKey = "BFDeviceIdentifier"
 ///
 /// - Parameter version: Version, like "9.0".
 /// - Returns: Returns true if equal, otherwise false.
- func osVersionEqual(_ version: String) -> Bool {
+public func osVersionEqual(_ version: String) -> Bool {
     UIDevice.current.systemVersion.compare(version, options: .numeric) == .orderedSame
 }
 
@@ -48,7 +48,7 @@ internal let BFDeviceIdentifierDefaultsKey = "BFDeviceIdentifier"
 ///
 /// - Parameter version: Version, like "9.0".
 /// - Returns: Returns true if greater, otherwise false.
- func osVersionGreaterThan(_ version: String) -> Bool {
+public func osVersionGreaterThan(_ version: String) -> Bool {
     UIDevice.current.systemVersion.compare(version, options: .numeric) == .orderedDescending
 }
 
@@ -56,7 +56,7 @@ internal let BFDeviceIdentifierDefaultsKey = "BFDeviceIdentifier"
 ///
 /// - Parameter version: Version, like "9.0".
 /// - Returns: Returns true if greater or equal, otherwise false.
- func osVersionGreaterThanOrEqual(_ version: String) -> Bool {
+public func osVersionGreaterThanOrEqual(_ version: String) -> Bool {
     UIDevice.current.systemVersion.compare(version, options: .numeric) != .orderedAscending
 }
 
@@ -64,7 +64,7 @@ internal let BFDeviceIdentifierDefaultsKey = "BFDeviceIdentifier"
 ///
 /// - Parameter version: Version, like "9.0".
 /// - Returns: Returns true if less, otherwise false.
- func osVersionLessThan(_ version: String) -> Bool {
+public func osVersionLessThan(_ version: String) -> Bool {
     UIDevice.current.systemVersion.compare(version, options: .numeric) == .orderedAscending
 }
 
@@ -72,14 +72,14 @@ internal let BFDeviceIdentifierDefaultsKey = "BFDeviceIdentifier"
 ///
 /// - Parameter version: Version, like "9.0".
 /// - Returns: Returns true if less or equal, otherwise false.
- func osVersionLessThanOrEqual(_ version: String) -> Bool {
+public func osVersionLessThanOrEqual(_ version: String) -> Bool {
     UIDevice.current.systemVersion.compare(version, options: .numeric) != .orderedDescending
 }
 
 // MARK: - UIDevice extension
 
 /// This extesion adds some useful functions to UIDevice
- extension UIDevice {
+public extension UIDevice {
     // MARK: - Variables
     
     /// Get OS version string.

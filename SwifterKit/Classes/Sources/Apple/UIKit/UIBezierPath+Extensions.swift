@@ -5,7 +5,7 @@ import UIKit
 
 // MARK: - Initializers
 
- extension UIBezierPath {
+public extension UIBezierPath {
     /// SwifterSwift: Initializes a UIBezierPath with a line from a CGPoint to another CGPoint.
     ///
     /// - Parameters:
