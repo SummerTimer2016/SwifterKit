@@ -32,7 +32,7 @@ import Foundation
 /// Runs a block on main thread.
 ///
 /// - Parameter block: Block to be executed.
- func runOnMainThread(_ block: @escaping () -> Void) {
+public func runOnMainThread(_ block: @escaping () -> Void) {
     DispatchQueue.main.async {
         block()
     }
@@ -41,7 +41,7 @@ import Foundation
 /// Runs a block in background.
 ///
 /// - Parameter block: block Block to be executed.
- func runInBackground(_ block: @escaping () -> Void) {
+public func runInBackground(_ block: @escaping () -> Void) {
     DispatchQueue.global().async {
         block()
     }
