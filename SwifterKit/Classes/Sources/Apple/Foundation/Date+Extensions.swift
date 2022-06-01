@@ -391,7 +391,19 @@ public extension Date {
         
         return calendar.date(byAdding: .day, value: days, to: self)
     }
-    
+    /// Add years to
+    ///
+    /// - Parameter days: The number of days to add.
+    /// - Returns: Returns self by adding the gived days number.
+    func addingYears(_ years: Int) -> Date? {
+        #if os(Linux)
+            let calendar = Calendar(identifier: .gregorian)
+        #else
+            let calendar = Calendar.autoupdatingCurrent
+        #endif
+        
+        return calendar.date(byAdding: .year, value: years, to: self)
+    }
     /// Add days to 
     ///
     /// - Parameter days: The number of days to add.
@@ -402,7 +414,16 @@ public extension Date {
         
         self = date
     }
-    
+    /// Add year to
+    ///
+    /// - Parameter year: The number of year to add.
+    mutating func addYears(_ years: Int) {
+        guard let date = addingYears(years) else {
+            return
+        }
+        
+        self = date
+    }
     /// Get the year string from 
     ///
     /// - Returns: Returns the year string from 

@@ -8,8 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
-		C49EB86427042AB10016ECC0 /* URL+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49EB86227042AB10016ECC0 /* URL+Extensions.swift */; };
-		C49EB86527042AB10016ECC0 /* URL+RequestExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C49EB86327042AB10016ECC0 /* URL+RequestExtensions.swift */; };
 		ED1E05B5E254C33F26471990 /* Pods_SwifterKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 002A76A65589D6C02143B6CA /* Pods_SwifterKit_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -75,8 +73,6 @@
 		C48DDF43264E298300575E33 /* CLLocation+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocation+Extensions.swift"; sourceTree = "<group>"; };
 		C48DDF44264E298300575E33 /* CLLocationArray+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CLLocationArray+Extensions.swift"; sourceTree = "<group>"; };
 		C48DDF49264E298300575E33 /* .gitkeep */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitkeep; sourceTree = "<group>"; };
-		C49EB86227042AB10016ECC0 /* URL+Extensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+Extensions.swift"; sourceTree = "<group>"; };
-		C49EB86327042AB10016ECC0 /* URL+RequestExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "URL+RequestExtensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -241,8 +237,6 @@
 		C48DDF30264E298200575E33 /* Foundation */ = {
 			isa = PBXGroup;
 			children = (
-				C49EB86227042AB10016ECC0 /* URL+Extensions.swift */,
-				C49EB86327042AB10016ECC0 /* URL+RequestExtensions.swift */,
 				C41C50792673066B00FE8FFE /* Device+Extensions.swift */,
 				C48DDF31264E298200575E33 /* Array+Extensions.swift */,
 				C48DDF32264E298200575E33 /* NSPointerArray+Extensions.swift */,
@@ -405,8 +399,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C49EB86527042AB10016ECC0 /* URL+RequestExtensions.swift in Sources */,
-				C49EB86427042AB10016ECC0 /* URL+Extensions.swift in Sources */,
 				607FACEC1AFB9204008FA782 /* Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
